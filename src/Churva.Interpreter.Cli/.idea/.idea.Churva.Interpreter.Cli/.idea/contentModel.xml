@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Lil Hiccup\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Lil Hiccup\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Churva.Interpreter.Cli.15518226.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli" t="IncludeFlat">
+      <e p="Churva.Interpreter.BluePrints" t="IncludeRecursive">
+        <e p="Attributes" t="Include">
+          <e p="KeywordAttribute.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Churva.Interpreter.BluePrints.csproj" t="IncludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IKeyword.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Churva.Interpreter.BluePrints.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Churva.Interpreter.Cli" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Churva.Interpreter.Cli.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Churva.Interpreter.Cli.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="Churva.Interpreter.Cli.sln" t="IncludeFlat" />
+      <e p="Churva.Interpreter.Core" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Churva.Interpreter.Core.csproj" t="IncludeRecursive" />
+        <e p="I" t="Include">
+          <e p="I08.cs" t="Include" />
+          <e p="I16.cs" t="Include" />
+          <e p="I32.cs" t="Include" />
+          <e p="I64.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Churva.Interpreter.Core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="U08.cs" t="Include" />
+        <e p="U16.cs" t="Include" />
+        <e p="U32.cs" t="Include" />
+        <e p="U64.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,60 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.Cli\\Churva.Interpreter.Cli.csproj",
+    "projectName": "Churva.Interpreter.Cli",
+    "projectPath": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.Cli\\Churva.Interpreter.Cli.csproj",
+    "outputPath": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.Cli\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.0"
+    ],
+    "frameworks": {
+      "netcoreapp3.0": {
+        "projectReferences": {
+          "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.Core\\Churva.Interpreter.Core.csproj": {
+            "projectPath": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.Core\\Churva.Interpreter.Core.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "include": "None",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.0.0-preview-27324-5, )",
+          "autoReferenced": true
+        },
+        "Microsoft.NETCore.Platforms": {
+          "target": "Package",
+          "version": "[3.0.0-preview.19073.11, )",
+          "autoReferenced": true
+        },
+        "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
+          "include": "None",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.0.0-preview-27324-5, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

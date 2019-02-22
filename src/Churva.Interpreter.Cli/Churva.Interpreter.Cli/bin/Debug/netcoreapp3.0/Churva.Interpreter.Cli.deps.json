@@ -1,0 +1,58 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": "dcf350364aed7e056ec8cd653153ce173af26999"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Churva.Interpreter.Cli/1.0.0": {
+        "dependencies": {
+          "Churva.Interpreter.Core": "1.0.0",
+          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "3.0.0-preview-27324-5"
+        },
+        "runtime": {
+          "Churva.Interpreter.Cli.dll": {}
+        }
+      },
+      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview-27324-5": {},
+      "Churva.Interpreter.BluePrints/1.0.0": {
+        "runtime": {
+          "Churva.Interpreter.BluePrints.dll": {}
+        }
+      },
+      "Churva.Interpreter.Core/1.0.0": {
+        "dependencies": {
+          "Churva.Interpreter.BluePrints": "1.0.0"
+        },
+        "runtime": {
+          "Churva.Interpreter.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Churva.Interpreter.Cli/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview-27324-5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fEiegQMYHxXN0XLNMDEbQ5JgeBTjKrWLWINvyZe1ZM8xxou4l3r94dtqZPYczk/yuJY4GRWe1Ch9jj+Rw2Edqw==",
+      "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/3.0.0-preview-27324-5",
+      "hashPath": "runtime.win-x64.microsoft.netcore.dotnetapphost.3.0.0-preview-27324-5.nupkg.sha512"
+    },
+    "Churva.Interpreter.BluePrints/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Churva.Interpreter.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

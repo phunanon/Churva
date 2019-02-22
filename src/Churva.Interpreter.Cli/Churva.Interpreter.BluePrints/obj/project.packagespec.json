@@ -1,0 +1,49 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.BluePrints\\Churva.Interpreter.BluePrints.csproj",
+    "projectName": "Churva.Interpreter.BluePrints",
+    "projectPath": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.BluePrints\\Churva.Interpreter.BluePrints.csproj",
+    "outputPath": "C:\\Users\\Lil Hiccup\\Documents\\Coding Projects\\Churva\\Churva\\src\\Churva.Interpreter.Cli\\Churva.Interpreter.BluePrints\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.0"
+    ],
+    "frameworks": {
+      "netcoreapp3.0": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "include": "None",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.0.0-preview-27324-5, )",
+          "autoReferenced": true
+        },
+        "Microsoft.NETCore.Platforms": {
+          "target": "Package",
+          "version": "[3.0.0-preview.19073.11, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

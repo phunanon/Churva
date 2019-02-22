@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Churva.Interpreter.Cli", "Churva.Interpreter.Cli\Churva.Interpreter.Cli.csproj", "{8D9B89FD-E49E-4F08-B425-B7D0E9CFF33F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Churva.Interpreter.Core", "Churva.Interpreter.Core\Churva.Interpreter.Core.csproj", "{34F5F05B-B5EF-4955-AB7A-BF506FA3F338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Churva.Interpreter.BluePrints", "Churva.Interpreter.BluePrints\Churva.Interpreter.BluePrints.csproj", "{D800482B-76C7-47D1-99A9-79954ECE805D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D9B89FD-E49E-4F08-B425-B7D0E9CFF33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9B89FD-E49E-4F08-B425-B7D0E9CFF33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9B89FD-E49E-4F08-B425-B7D0E9CFF33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9B89FD-E49E-4F08-B425-B7D0E9CFF33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F5F05B-B5EF-4955-AB7A-BF506FA3F338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F5F05B-B5EF-4955-AB7A-BF506FA3F338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F5F05B-B5EF-4955-AB7A-BF506FA3F338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F5F05B-B5EF-4955-AB7A-BF506FA3F338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D800482B-76C7-47D1-99A9-79954ECE805D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D800482B-76C7-47D1-99A9-79954ECE805D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D800482B-76C7-47D1-99A9-79954ECE805D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D800482B-76C7-47D1-99A9-79954ECE805D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

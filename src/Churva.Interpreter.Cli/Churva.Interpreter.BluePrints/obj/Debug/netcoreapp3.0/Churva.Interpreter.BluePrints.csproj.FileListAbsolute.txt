@@ -1,0 +1,9 @@
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\bin\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.deps.json
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\bin\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\bin\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.pdb
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.csprojAssemblyReference.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.csproj.CoreCompileInputs.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.AssemblyInfoInputs.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.AssemblyInfo.cs
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.BluePrints\obj\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.pdb

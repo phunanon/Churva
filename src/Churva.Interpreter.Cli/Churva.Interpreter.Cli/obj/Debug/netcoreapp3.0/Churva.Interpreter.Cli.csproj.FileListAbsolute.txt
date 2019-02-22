@@ -1,0 +1,17 @@
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.exe
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.deps.json
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.runtimeconfig.json
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.runtimeconfig.dev.json
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Cli.pdb
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Core.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.Core.pdb
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.csprojAssemblyReference.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.csproj.CoreCompileInputs.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.AssemblyInfoInputs.cache
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.AssemblyInfo.cs
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.csproj.CopyComplete
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\obj\Debug\netcoreapp3.0\Churva.Interpreter.Cli.pdb
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.dll
+C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli\Churva.Interpreter.Cli\bin\Debug\netcoreapp3.0\Churva.Interpreter.BluePrints.pdb
