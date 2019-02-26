@@ -47,11 +47,11 @@ Evaluate subroutine with and without arguments: `doSum()`, `doSum(1, arg2)`
 
 #### Anonymous
 
-Anonymous subroutines are a scope of code which can be contained on one line, and return the value of the final evaluation. Commas delimit lines of code.  
+Anonymous subroutines are a scope of code which can be contained on one line, and return the value of the final evaluation. Semicolons delimit blocks of code.  
 Here, `myNumber` is assigned as the value of `sum`:
 
-    i32 myNumber = i32 sum = a + b, sum   //
-	i32 myNumber = (i32 sum = a + b, sum) // Same behaviour
+    i32 myNumber = i32 sum = a + b; sum   //
+	i32 myNumber = (i32 sum = a + b; sum) // Same behaviour
 
 ### Flow Control
 
@@ -69,8 +69,7 @@ Here, `myNumber` is assigned as the value of `sum`:
 | `skip`                         | Skip to next iteration                                                              |
 | `finish`                       | Finish loop                                                                         |
 
-Single line `if`: `statement ? code if true : code if false`  
-Single line other: `statement => code`
+Single line statements: `statement => code`
 
 Evaluation of arrays occurs only once, allowing such scenarios as:
 
