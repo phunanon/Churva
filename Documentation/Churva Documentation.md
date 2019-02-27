@@ -1,7 +1,7 @@
 # Churva Documentation
 
 ## Introduction
-Term, Clock
+Term, Clock, line continuation
 
 ## Syntax
 ### Data Types, Declaration, and Assignment
