@@ -4,6 +4,7 @@ namespace Churva.Interpreter.BluePrints.Interfaces
 {
     public interface IKeyword
     {
-        Boolean Validate();
+        String InstanceName { get; set; }
+        Boolean Validate(String[] strings);
     }
 }

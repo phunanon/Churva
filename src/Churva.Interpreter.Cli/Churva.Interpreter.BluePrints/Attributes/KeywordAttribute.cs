@@ -7,6 +7,6 @@ namespace Churva.Interpreter.BluePrints.Attributes
         /// <summary>
         /// Gets or sets the keyword used by the managing class.
         /// </summary>
-        public String Word { get; set; }
+        public String[] Words { get; set; }
     }
 }

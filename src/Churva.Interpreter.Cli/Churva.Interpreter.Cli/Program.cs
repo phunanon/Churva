@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
+using Churva.Interpreter.BluePrints.Interfaces;
+using static Churva.Interpreter.BluePrints.ChurvaEnvironment;
 
 namespace Churva.Interpreter.Cli
 {
@@ -13,18 +17,63 @@ namespace Churva.Interpreter.Cli
     {
         private const String CoreName = "Churva.Interpreter.Core.dll";
         private static Assembly _coreAsm;
-        private static Dictionary<string, Type> _keywords = new Dictionary<string, Type>();
+
 
         /// <summary>
         /// The main entry point of the application
         /// </summary>
         /// <param name="args">The parameters provided by the user</param>
-        private static void Main(string[] args)
+        private static void Main(String[] args)
         {
             Console.WriteLine("Loading keywords.");
             var dir = Assembly.GetExecutingAssembly().GetDirectory();
             _coreAsm = Assembly.LoadFile(Path.Combine(dir,CoreName));
             LoadKeywords();
+            var line = string.Empty;
+            while (line != "q")
+            {
+                try
+                {
+                    Console.Write("> ");
+                    line = Console.ReadLine() ?? "";
+                    var matched = false;
+                    foreach (var key in Keywords.Keys)
+                    {
+                        var match = key?.Where(itm => line.StartsWith(itm)).ToList();
+                        if (!match.Any()) continue;
+                        matched = true;
+                        var use = match.FirstOrDefault();
+                        var type = Keywords[key];
+                        Console.WriteLine($"Started with: {use}");
+                        var instance = Activator.CreateInstance(type);
+                        var val = instance.InvokeReturnMethod<Boolean>($"{nameof(IKeyword.Validate)}",
+                            new Object[] {new[] {line}});
+                        Console.WriteLine(val);
+                    }
+
+                    if (matched) continue;
+
+                    var instanceExist = false;
+                    if (!matched)
+                    {
+                        instanceExist = GetInstance(line.Trim(), out var instance);
+                        if(instanceExist)
+                            Console.WriteLine(instance.Value.ToString());
+                    }
+                    if(!instanceExist)
+                    {
+                        Console.WriteLine($"No instance called: {line}");
+                    }
+                }
+                catch (TargetInvocationException e)
+                {
+                    Console.WriteLine($"{e.InnerException.Message}");
+                }
+                catch (RuntimeException e)
+                {
+                    Console.WriteLine($"{e.Message}");
+                }
+            }
         }
 
         private static void LoadKeywords()
@@ -35,30 +84,9 @@ namespace Churva.Interpreter.Cli
             {
                 var at = type.GetCustomAttribute<KeywordAttribute>();
                 if (at == null) continue;
-                _keywords.Add(at.Word, type);
-                Console.WriteLine($"{type.Name} Loaded");
+                Keywords.Add(at.Words, type);
+                Console.WriteLine($"{type.Name} Loaded - {string.Join(",", at.Words)}");
             }
-        }
-
-        private static void ValidateKeyword(IEnumerable<Attribute> attrs, Type type)
-        {
-            foreach (var attr in attrs)
-            {
-                var kw = attr as KeywordAttribute;
-                if (kw == null) continue;
-
-                _keywords.Add(kw.Word, type);
-                Console.WriteLine($"Loaded {type.Name}");
-            }
-        }
-    }
-    
-    public static class AssemblyExtensions{
-        public static String GetDirectory(this Assembly assembly)
-        {
-            var cb = assembly.CodeBase;
-            var ds = Uri.UnescapeDataString(new UriBuilder(cb).Path);
-            return Path.GetDirectoryName(ds);
         }
     }
 }
