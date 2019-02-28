@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4fb86b6d-8cf6-4bfa-a596-fee96548a39e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Debug/netcoreapp3.0/Churva.Interpreter.BluePrints.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Debug/netcoreapp3.0/Churva.Interpreter.BluePrints.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Debug/netcoreapp3.0/Churva.Interpreter.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Debug/netcoreapp3.0/Churva.Interpreter.Core.assets.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +75,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="220">
-                <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+                <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -399,12 +395,12 @@
       <workItem from="1550986943118" duration="13922000" />
       <workItem from="1551022022356" duration="3885000" />
       <workItem from="1551290785894" duration="30982000" />
-      <workItem from="1551326065095" duration="581000" />
+      <workItem from="1551326065095" duration="828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72114000" />
+    <option name="totallyTimeSpent" value="72361000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,7 +413,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23521851" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1084,7 +1079,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="220">
-            <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
