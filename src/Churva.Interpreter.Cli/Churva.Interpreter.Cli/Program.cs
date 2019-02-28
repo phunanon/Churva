@@ -17,6 +17,7 @@ namespace Churva.Interpreter.Cli
     {
         private const String CoreName = "Churva.Interpreter.Core.dll";
         private static Assembly _coreAsm;
+        private static String _quit = "::quit";
 
 
         /// <summary>
@@ -30,12 +31,14 @@ namespace Churva.Interpreter.Cli
             _coreAsm = Assembly.LoadFile(Path.Combine(dir,CoreName));
             LoadKeywords();
             var line = string.Empty;
-            while (line != "q")
+            while (line != _quit)
             {
                 try
                 {
                     Console.Write("> ");
                     line = Console.ReadLine() ?? "";
+                    if (line == _quit)
+                        break;
                     var matched = false;
                     foreach (var key in Keywords.Keys)
                     {

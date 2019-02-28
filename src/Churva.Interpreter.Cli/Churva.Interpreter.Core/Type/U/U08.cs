@@ -3,25 +3,20 @@ using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
 
-namespace Churva.Interpreter.Core.U
+namespace Churva.Interpreter.Core.Type.U
 {
     [Keyword(Words = new []{"u08"})]
-    public class U08 : ValueType<UInt16>, IKeyword
+    public class U08 : ValueType<UInt16>
     {
         private UInt16 _value;
-        public String InstanceName { get; set; }
 
         public override Boolean SetValueByObject(Object obj)
         {
-            throw new NotImplementedException();
-        }
-
-        public override Boolean Validate(String[] strings)
-        {
-            Console.WriteLine("Wow, you made it");
-            foreach (var t in strings)
-                Console.WriteLine(t);
-
+            if (String.IsNullOrWhiteSpace(obj.ToString()))
+                throw new RuntimeException("ERROR: Expected a Value");
+            if (!UInt16.TryParse(obj.ToString(), out var value))
+                throw new RuntimeException("ERROR: Not a number");
+            Value = value;
             return true;
         }
 

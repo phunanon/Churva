@@ -2,7 +2,7 @@ using System;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
 
-namespace Churva.Interpreter.Core
+namespace Churva.Interpreter.Core.Flow
 {
     [Keyword(Words = new []{"?",":"})]
     public class Ternary: FlowControl, IKeyword

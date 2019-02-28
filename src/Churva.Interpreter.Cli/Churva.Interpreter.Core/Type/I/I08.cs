@@ -1,24 +1,25 @@
 ﻿using System;
+using System.Linq;
 using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
 
-namespace Churva.Interpreter.Core.I
+namespace Churva.Interpreter.Core.Type.I
 {
-    [Keyword(Words=new []{"i08"})]
-    public class I08: ValueType<Int16>, IKeyword
+    [Keyword(Words = new[] {"i08"})]
+    public class I08 : ValueType<Int16>
     {
-        //There is no int8 in c#
-        public String InstanceName { get; set; }
-
         public override Boolean SetValueByObject(Object obj)
         {
-            throw new NotImplementedException();
-        }
+            if (String.IsNullOrWhiteSpace(obj.ToString()))
+                throw new RuntimeException("ERROR: Expected a Value");
+            if (!Int16.TryParse(obj.ToString(), out var value))
+            {
+                throw new RuntimeException("ERROR: Not a number");
+            }
+            Value = value;
 
-        public override Boolean Validate(String[] strings)
-        {
-            throw new NotImplementedException();
+            return true;
         }
 
         private Int16 _value;
@@ -33,7 +34,7 @@ namespace Churva.Interpreter.Core.I
             set
             {
                 if (value < -128 || value > 127)
-                    throw new RuntimeException($"Value is out of the max range for {nameof(I08)}");
+                    throw new RuntimeException($"ERROR: Value is out of the max range for {nameof(I08)}");
                 _value = value;
             }
         }

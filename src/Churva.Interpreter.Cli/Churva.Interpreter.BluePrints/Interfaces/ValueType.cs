@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using static Churva.Interpreter.BluePrints.ChurvaEnvironment;
 
 namespace Churva.Interpreter.BluePrints.Interfaces
 {
@@ -29,6 +31,16 @@ namespace Churva.Interpreter.BluePrints.Interfaces
 
         public virtual T Value { get; set; }
         public virtual String InstanceName { get; set; }
-        public abstract Boolean Validate(String[] strings);
+
+        public virtual Boolean Validate(String[] strings)
+        {
+            if (!strings.Any()) return false;
+            var ret = ParseValueInstance(this, strings);
+            InstanceName = ret[0];
+            if (SetValueByObject(ret[1]))
+                Console.WriteLine($"{InstanceName}={Value.ToString()}");
+            Instances.Add(this);
+            return true;
+        }
     }
 }

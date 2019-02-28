@@ -25,7 +25,7 @@ namespace Churva.Interpreter.BluePrints
         };
         public static readonly Dictionary<string, MultiOperator> MultiOperators = new Dictionary<string, MultiOperator>
         {
-            {"=", MultiOperator.VariableAssignment},
+            //{"=", MultiOperator.VariableAssignment},
             {"+", MultiOperator.ArithmeticalAddition},
             {"-", MultiOperator.ArithmeticalSubtraction},
             {"*", MultiOperator.ArithmeticalMultiplication},
@@ -50,7 +50,7 @@ namespace Churva.Interpreter.BluePrints
         public static Boolean ValidNewInstanceName(this String name)
         {
             if(IsInstance(name))
-                throw new RuntimeException("ERROR: There is already an instance with this name");
+                throw new RuntimeException($"ERROR: There is already an instance with the name '{name}'");
             if (name.Contains(' '))
                 throw new RuntimeException("ERROR: Instance name cannot contain a space");
             foreach (var key in SingleOperators.Keys)
@@ -94,12 +94,14 @@ namespace Churva.Interpreter.BluePrints
             var stringsList = strings.ToList();
             if (!stringsList.Any())
                 throw new RuntimeException("Error: Internal failure.");
-            String[] returns = new String[2];
+            var returns = new String[2];
             var str = stringsList.FirstOrDefault();
             var words = ivt.GetType().GetAttributeValue((KeywordAttribute itm) => itm.Words);
             var word = words.FirstOrDefault();
             var reg = str.IndexOf(word, StringComparison.InvariantCulture);
             str = str.Remove(reg, word.Length);
+            if(String.IsNullOrWhiteSpace(str))
+                throw new RuntimeException("ERROR: Expected an instance name");
             if (str.Contains('='))
             {
                 try

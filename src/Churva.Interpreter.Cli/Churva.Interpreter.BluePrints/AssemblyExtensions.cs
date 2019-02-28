@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Churva.Interpreter.Cli
+namespace Churva.Interpreter.BluePrints
 {
     public static class AssemblyExtensions{
         public static String GetDirectory(this Assembly assembly)

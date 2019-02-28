@@ -1,24 +1,28 @@
 using System;
+using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
 
-namespace Churva.Interpreter.Core.F
+namespace Churva.Interpreter.Core.Type.F
 {
-    [Keyword(Words = new []{"f64"})]
-    public class F64: ValueType<Decimal>, IKeyword
+    [Keyword(Words = new[] {"f64"})]
+    public class F64 : ValueType<Double>
     {
-        public String InstanceName { get; set; }
-
         public override Boolean SetValueByObject(Object obj)
         {
-            throw new NotImplementedException();
+            if (String.IsNullOrWhiteSpace(obj.ToString()))
+                throw new RuntimeException("ERROR: Expected a Value");
+            if (!Double.TryParse(obj.ToString(), out _value))
+                throw new RuntimeException("ERROR: Not a number");
+            return true;
         }
 
-        public override Boolean Validate(String[] strings)
+        private Double _value;
+
+        public override Double Value
         {
-            throw new System.NotImplementedException();
+            get => _value;
+            set => _value = value;
         }
-
-        public override Decimal Value { get; set; }
     }
 }

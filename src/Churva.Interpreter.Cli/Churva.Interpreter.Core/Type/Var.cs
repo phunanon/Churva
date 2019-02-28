@@ -2,26 +2,21 @@ using System;
 using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
-using static Churva.Interpreter.BluePrints.ReflectionHelper;
 
-namespace Churva.Interpreter.Core
+namespace Churva.Interpreter.Core.Type
 {
-    [Keyword(Words = new []{"var"})]
+    [Keyword(Words = new[] {"var"})]
     public class Var : ValueType<Object>, IKeyword
     {
         public String InstanceName { get; set; }
 
         public override Boolean SetValueByObject(Object obj)
         {
-            throw new NotImplementedException();
+            Value = obj;
+            return true;
         }
 
-        public override Boolean Validate(String[] strings)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Type Type { get; set; } = null;
+        public System.Type Type { get; set; } = null;
 
         private Object _value;
 
@@ -30,24 +25,17 @@ namespace Churva.Interpreter.Core
             get => _value;
             set
             {
-                if (value is IValueType val)
+                Type = value.GetType();
+                try
                 {
-                    Type = value.GetType().GetGenericArguments()[0];
-                    try
-                    {
-                        CreateGenericInstance(typeof(ValueType<>), Type, val.Value);
-                    }
-                    catch (Exception)
-                    {
-                        throw new RuntimeException("Couldn't determine type");
-                    }
+                    ReflectionHelper.CreateGenericInstance(typeof(ValueType<>), Type, value);
+                }
+                catch (Exception e)
+                {
+                    throw new RuntimeException("ERROR: Couldn't determine type");
+                }
 
-                    _value = val.Value;
-                }
-                else
-                {
-                    throw new RuntimeException("Expected a value type.");
-                }
+                _value = value;
             }
         }
     }

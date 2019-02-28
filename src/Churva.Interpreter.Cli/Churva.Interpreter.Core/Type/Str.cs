@@ -1,27 +1,23 @@
 using System;
+using Churva.Interpreter.BluePrints;
 using Churva.Interpreter.BluePrints.Attributes;
 using Churva.Interpreter.BluePrints.Interfaces;
 
-namespace Churva.Interpreter.Core
+namespace Churva.Interpreter.Core.Type
 {
     [Keyword(Words = new []{"str"})]
-    public class Str: ValueType<String>, IKeyword
+    public class Str: ValueType<String>
     {
-        public String InstanceName { get; set; }
-
         public override Boolean SetValueByObject(Object obj)
         {
-            throw new NotImplementedException();
-        }
+            var val = obj.ToString();
+            if(!(val.StartsWith("\"") && val.EndsWith("\"")))
+                throw new RuntimeException($"ERROR: {InstanceName} Expected \" => {val}");
 
-        public override Boolean Validate(String[] strings)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Boolean ValidateValue<T>()
-        {
-            throw new NotImplementedException();
+            val = val.Substring(1, val.Length - 1);
+            val = val.Remove(val.Length - 1, 1);
+            Value = val;
+            return true;
         }
 
         public override String Value { get; set; }

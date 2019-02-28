@@ -1,5 +1,6 @@
-[Bb]in
-[Dd]ebug*/
-obj/
-[Rr]elease*/
-_ReSharper*/
+**/[Bb]in
+**/[Dd]ebug*
+**/obj
+**/[Rr]elease*
+**/_ReSharper*
+**/.idea
