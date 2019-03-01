@@ -25,19 +25,19 @@ Check for, and subsequently serialise...
 2. Variables (declaration)
 3. Variables (assignment)
 4. Statements
-5. Classes (referenced)
-6. Classes (declaration)
-7. Subroutines (referenced)
-8. Subroutines (declaration)
-9. Variables (referenced)
-10. Operators
+5. Classes (declaration)
+6. Subroutines (referenced)
+7. Subroutines (declaration)
+8. Referenced names
+9. Operators
+10. Literals
 
 **Rates**
 
 * 0th Rate: 7, 9. Used for initial file evaluation.
-* 1st Rate: 1, 2, 3, 4, 5, 6, 7, 8. Used for line evaluation.
-* 2nd Rate: 2, 3, 5, 7, 9. Used for expression evaluation (e.g. someCode(), 4 + 3).
-* 3rd Rate: 1, 5, 7, 8, 9. Used for sub-expression evaluation (e.g. 4, +, 3).
+* 1st Rate: 1, 2, 3, 4, 5, 6, 7. Used for line evaluation.
+* 2nd Rate: 2, 3, 6, 7, 8, 10. Used for expression evaluation (e.g. someCode(), 4 + 3).
+* 3rd Rate: 1, 5, 6, 7, 8. Used for sub-expression evaluation (e.g. 4, +, 3).
 
 **TokenChecker operations**
 
@@ -53,3 +53,25 @@ Check for, and subsequently serialise...
 10. TODO
 11. TODO
 12. TODO
+
+## Binary to Context (TODO)
+
+Check for, and subsequently serialise...
+
+1. Line/block end
+2. Variables (declaration)
+3. Variables (assignment)
+4. Statements
+5. Classes (referenced)
+6. Classes (declaration)
+7. Subroutines (referenced)
+8. Subroutines (declaration)
+9. Variables (referenced)
+10. Operators
+
+**Rates**
+
+* 0th Rate: 7, 9. Used for initial file evaluation.
+* 1st Rate: 1, 2, 3, 4, 5, 6, 7, 8. Used for line evaluation.
+* 2nd Rate: 2, 3, 5, 7, 9. Used for expression evaluation (e.g. someCode(), 4 + 3).
+* 3rd Rate: 1, 5, 7, 8, 9. Used for sub-expression evaluation (e.g. 4, +, 3).

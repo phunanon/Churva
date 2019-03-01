@@ -1,6 +1,6 @@
 ﻿namespace ChurvaInterpreter
 {
-    internal class ByteDeserialiser
+    internal class TokenDeserialiser
     {
         
     }

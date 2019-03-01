@@ -16,6 +16,7 @@ namespace ChurvaInterpreter
 			TextOrNumber(atoms);
 			ReconstructFloats(atoms);
 			ConstructLiterals(atoms);
+			ReconstructOperators(atoms);
 
 			return atoms;
 		}
@@ -48,14 +49,14 @@ namespace ChurvaInterpreter
 				if (trimmedLine.StartsWith("#")) continue;
 				//Split line by alphanumeric runs and non-alphanumeric chars
 				atoms.AddRange(
-					TextCrawler(trimmedLine)
+					OpOrTextSplitter(trimmedLine)
 						.Select(
 							sym => new ParseAtom(
 								linNum, (ushort)sym.col, sym.isAlpha ? ParseToken.TEXT : ParseToken.OP, sym.text
 							)
 						)
 				);
-				atoms.Add(new ParseAtom(linNum, line.Length, ParseToken.NL, ""));
+				atoms.Add(new ParseAtom(linNum, (ushort)line.Length, ParseToken.ENDLIN, ""));
 				++linNum;
 			}
 		}
@@ -94,7 +95,31 @@ namespace ChurvaInterpreter
 			}
 		}
 
-		private static IEnumerable<(int col, string text, bool isAlpha)> TextCrawler (string text)
+		
+		private static char[][] _longOps = Dict.LongOps.Select(o => o.ToCharArray()).ToArray();
+		private static void ReconstructOperators (IList<ParseAtom> atoms)
+		{
+            var prevOp = "";
+			for (int a = atoms.Count - 2; a >= 0; --a) {
+				if (atoms[a].Token != ParseToken.OP) {
+					prevOp = "";
+					continue;
+				}
+
+				var inspect = atoms[a].Text;
+                if (prevOp.Length > 0 && inspect.Length > 0) {
+	                foreach (var op in _longOps) {
+		                if (!TestPattern(new[] {inspect[0], prevOp[0]}, op)) continue;
+		                atoms[a].Text = new string(op);
+		                atoms.RemoveAt(a + 1);
+		                break;
+	                }
+				}
+				prevOp = atoms[a].Text;
+			}
+        }
+
+        private static IEnumerable<(int col, string text, bool isAlpha)> OpOrTextSplitter (string text)
 		{
 			var escapable = '\0';
 			for (var c = 0; c < text.Length;) {
@@ -125,10 +150,6 @@ namespace ChurvaInterpreter
 					else {
 						var ch = next[0];
 						if (ch == '"' || ch == '\'') escapable = ch;
-						if (TestPattern(next, '=', '=')) {
-							yield return (c, "==", false); //Be sure to yield == as one operator
-							++c;
-						}
 						else yield return (c, $"{ch}", false);
 					}
 

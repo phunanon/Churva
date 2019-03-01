@@ -6,11 +6,11 @@ namespace ChurvaInterpreter
 {
 	internal class ParseAtom
     {
-	    public (ushort Line, int Column) OriginalPosition;
+	    public (ushort Line, ushort Column) OriginalPosition;
 	    public ParseToken Token;
 	    public string Text;
 
-        public ParseAtom(ushort line, int column, ParseToken token, string text)
+        public ParseAtom(ushort line, ushort column, ParseToken token, string text)
         {
             OriginalPosition = (line, column);
             Token = token;
@@ -19,10 +19,4 @@ namespace ChurvaInterpreter
 
 	    public override string ToString () => $"{OriginalPosition.Line,-5}{OriginalPosition.Column,-4}{Enum.GetName(typeof(ParseToken), Token),-8}{Text}";
     }
-
-	internal enum ParseToken
-	{
-		UNKNOWN,
-		TEXT, NL, OP, NUMBER, STRING, CHAR, INDENT, DEDENT
-	}
 }
