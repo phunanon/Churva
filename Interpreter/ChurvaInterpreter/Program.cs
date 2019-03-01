@@ -23,9 +23,13 @@ namespace ChurvaInterpreter
 	    private static void Interpret (string[] source)
 	    {
 		    var atoms = LexicalParser.ParseSourceLines(source);
+		    var bytes = TokenSerialiser.Serialise(atoms, true);
+		    //var context = 
 
 			Console.WriteLine($"{atoms.Count} atoms.");
 		    foreach (var atom in atoms) Console.WriteLine(atom);
+		    foreach (var b in bytes) Console.Write($"{b:X2}");
+		    Console.WriteLine();
 	    }
     }
 }
