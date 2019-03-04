@@ -7,7 +7,7 @@ namespace ChurvaDotnet
     {
         static void Main(string[] args)
         {
-	        var isDebug = false;
+	        bool isDebug;
 	        Interpret("#!/usr/bin/churva\r\nvar file = File.readAll(\"names.txt\")\r\neach name, n: var names = file.delimit(\'\\n\')\r\n\tTerm.stamp(\"{n}/{names.Length}\\t{name}\")\r\nTerm.stamp(\"Complete.\")".Split('\n'));
             if (args.Length == 0) {
 				Console.WriteLine("Churva Interactive\n");
@@ -36,10 +36,10 @@ namespace ChurvaDotnet
 		    var bytes = TokenSerialiser.Serialise(atoms, isDebug);
 		    //var context = 
 
-			Console.WriteLine($"{atoms.Count} atoms.");
+			Console.WriteLine($"\n{atoms.Count} atoms.");
 		    foreach (var atom in atoms) Console.WriteLine(atom);
 		    foreach (var b in bytes) Console.Write($"{b:X2}");
-		    Console.WriteLine();
+		    Console.WriteLine($"\n{bytes.Length}B");
 	    }
     }
 }
