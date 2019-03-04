@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ChurvaInterpreter
+namespace ChurvaDotnet
 {
 	internal class ParseAtom
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace ChurvaInterpreter
+namespace ChurvaDotnet
 {
     class Program
     {

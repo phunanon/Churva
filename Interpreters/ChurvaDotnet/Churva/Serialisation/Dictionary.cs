@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace ChurvaInterpreter
+namespace ChurvaDotnet
 {
 	internal enum ParseToken
 	{

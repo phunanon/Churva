@@ -1,7 +1,9 @@
-# Churva Documentation
+# Churva Standard
+
+The prescriptive standardisation of the Churva programming language.
 
 ## Introduction
-Term, Clock, line continuation
+
 
 ## Syntax
 ### Data Types, Declaration, and Assignment
@@ -126,3 +128,7 @@ Members: ->, .
 
 ### Exceptions
 error !! alternative
+
+## Environment
+
+Term, Clock

@@ -1,4 +1,6 @@
 .vs
+.idea
+.vscode
 bin
 obj
 *.sln*

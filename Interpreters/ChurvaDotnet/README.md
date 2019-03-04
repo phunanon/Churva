@@ -1,6 +1,6 @@
 # Churva C# Interpreter
 
-This is a descriptive documentation on the ChurvaInterpreter implementation.
+This is a descriptive documentation on the ChurvaDotnet implementation.
 
 ## Implementation
 

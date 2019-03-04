@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ChurvaInterpreter
+namespace ChurvaDotnet
 {
     internal static class TokenSerialiser
     {

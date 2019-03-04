@@ -1,4 +1,4 @@
-﻿namespace ChurvaInterpreter
+﻿namespace ChurvaDotnet
 {
     internal class ChurvaEngine
     {
