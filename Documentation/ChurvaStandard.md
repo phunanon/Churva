@@ -63,7 +63,7 @@ Here, `myNumber` is assigned as the value of `sum`:
 | `else`                         | Evaluate block if previous `if` condition was false                                 |
 | `elif condition`               | Same as `else`, and its condition is true                                           |
 | `condition ? true : false`     | Evaluate blocks depending on condition                                              |
-| `when condition`               | Evaluate block when condition is true, only once                                    |
+| `once condition`               | Evaluate block if condition is true, only once                                    |
 | `while condition`              | Loop block if present while condition is true                                       |
 | `for first; condition; repeat` | Evaluate `first` if present, loop block & repeat if present while condition is true |
 | `each item, iterator: array`   | Loop block, advance item & iterator through array each loop                         |

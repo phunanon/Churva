@@ -13,12 +13,13 @@ namespace ChurvaDotnet
     {
         HALT,
         DEBUG,
+        NEWLINE, INDENT, DEDENT,
         DECL_VARIABLE, DECL_POINTER,
         ASSIGN,
-        NEWLINE,
 		REFERENCE,
 		LIT_INT, LIT_FLO, LIT_CHR, LIT_STR,
-		OPERATOR, SCOPE
+		OPERATOR, SCOPE,
+		ST_EACHIT, ST_EACH
     }
 
     public enum NativeDataType : byte
@@ -33,8 +34,10 @@ namespace ChurvaDotnet
 
 	public static class Dict
 	{
-		public static string[] DataTypes = Enum.GetNames(typeof(NativeDataType)).ToArray();
+		public static string[] ParseTokens = Enum.GetNames(typeof(ParseToken));
+		public static string[] DataTypes = Enum.GetNames(typeof(NativeDataType));
+		public static string[] Statements = {"each"};
 		public static string[] LongOps = {"==", "!!", "&&", "||"};
-		public static char[] Operators = {'=', '+', '-', '*', '/'};
+		public static char[] Operators = {'=', '+', '-', '*', '/', '.', '(', ')'};
 	}
 }
