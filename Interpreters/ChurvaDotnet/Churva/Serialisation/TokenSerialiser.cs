@@ -7,27 +7,6 @@ namespace ChurvaDotnet
 {
     internal static class TokenSerialiser
     {
-        #region Heuristic objects, c'tor
-        
-        //private static BaseSerialiser _rate0;
-        private static readonly BaseSerialiser Rate1;
-        private static readonly BaseSerialiser Rate2;
-
-        static TokenSerialiser ()
-        {
-			//Note: Order is important, with latest serialisers doing work first
-            Rate1 = new NewlineSerialiser(Rate1);
-            Rate1 = new AssignSerialiser(Rate1);
-            Rate1 = new VarDeclSerialiser(Rate1);
-            Rate2 = new OperatorSerialiser(Rate2);
-            Rate2 = new LiteralSerialiser(Rate2);
-            Rate2 = new NameRefSerialiser(Rate2);
-            Rate2 = new AssignSerialiser(Rate2);
-            Rate2 = new VarDeclSerialiser(Rate2);
-        }
-
-        #endregion
-
         public static byte[] Serialise (List<ParseAtom> atoms, bool isDebug)
         {
             var bytes = new List<byte>();
@@ -36,7 +15,7 @@ namespace ChurvaDotnet
             var args = new SerialisationArgs(atoms, bytes, isDebug);
             var prevAtom = 0;
             while (!args.IsExhausted) {
-                Rate1.Serialise(args);
+                Rate1(args);
                 if (prevAtom == args.CurrentIndex) {
                     Log.Error("End of serialisation competence", args.Peek().OriginalPosition, args.Peek().Text);
                     break;
@@ -46,156 +25,131 @@ namespace ChurvaDotnet
             return bytes.ToArray();
         }
 
-        #region Serialisation Classes
+        #region Serialisation Rates
 
-        private abstract class BaseSerialiser
+        private static void Rate1 (SerialisationArgs args)
         {
-            protected readonly BaseSerialiser Child;
-	        protected BaseSerialiser (BaseSerialiser child) => Child = child;
-            public abstract void Serialise (SerialisationArgs args);
-
-            protected static byte[] GetNameBytes (string text, bool isDebug) =>
-	            isDebug ? GetStringBytes(text) : BitConverter.GetBytes(text.GetHashCode());
-
-            protected static byte[] GetStringBytes (string text) =>
-	            BitConverter.GetBytes(text.Length).Concat(Encoding.UTF8.GetBytes(text)).ToArray();
-
-	        protected static void MarkDebug (SerialisationArgs args)
-	        {
-		        if (!args.IsDebug) return;
-		        args.OutBytes(BitConverter.GetBytes(args.Peek().OriginalPosition.Line));
-		        args.OutBytes(BitConverter.GetBytes(args.Peek().OriginalPosition.Column));
-	        }
+	        VarDeclSerialise(args);
+	        AssignSerialise(args);
+	        NewlineSerialise(args);
         }
 
-        private class VarDeclSerialiser : BaseSerialiser
+        private static void Rate2 (SerialisationArgs args)
         {
-            public VarDeclSerialiser (BaseSerialiser child) : base(child) { }
-
-            public override void Serialise (SerialisationArgs args)
-            {
-                if (args.Peek().Token == ParseToken.TEXT && args.Peek(1).Token == ParseToken.TEXT) {
-                    if (Dict.DataTypes.Contains(args.Peek().Text)) {
-                        args.OutToken(BinaryToken.DECL_VARIABLE);
-                        args.OutByte((byte) Enum.Parse<NativeDataType>(args.Peek().Text));
-                        args.OutBytes(GetNameBytes(args.Peek(1).Text, args.IsDebug));
-                        args.Eat(2);
-                    }
-                }
-                Child?.Serialise(args);
-            }
+	        VarDeclSerialise(args);
+	        AssignSerialise(args);
+	        NameRefSerialise(args);
+	        LiteralSerialise(args);
+	        OperatorSerialise(args);
         }
 
-        private class AssignSerialiser : BaseSerialiser
-        {
-            public AssignSerialiser (BaseSerialiser child) : base(child) { }
+		#endregion
 
-            public override void Serialise (SerialisationArgs args)
-            {
-                var afterDecl = args.Peek().Token == ParseToken.OP && args.Peek().Text == "=";
-                var other = args.Peek().Token == ParseToken.TEXT && args.Peek(1).Text == "=";
-                if (afterDecl | other) {
-	                MarkDebug(args);
-                    args.OutToken(BinaryToken.ASSIGN);
-                    if (afterDecl && args.CanPeek(-1)) {
-                        args.OutBytes(GetNameBytes(args.Peek(-1).Text, args.IsDebug));
-                        args.Eat();
-                    } else {
-                        args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
-                        args.Eat(2);
-                    }
-					//Defer to 2nd Rate Serialiser
-					int prevAtom;
-					do {
-						prevAtom = args.CurrentIndex;
-						Rate2.Serialise(args);
-					} while (args.CurrentIndex != prevAtom);
-                }
-                Child?.Serialise(args);
-            }
+		#region Serialisation Methods
+
+		private static void VarDeclSerialise (SerialisationArgs args)
+		{
+			if (args.Peek().Token == ParseToken.TEXT && args.Peek(1).Token == ParseToken.TEXT) {
+				if (Dict.DataTypes.Contains(args.Peek().Text)) {
+					args.OutToken(BinaryToken.DECL_VARIABLE);
+					args.OutByte((byte) Enum.Parse<NativeDataType>(args.Peek().Text));
+					args.OutBytes(GetNameBytes(args.Peek(1).Text, args.IsDebug));
+					args.Eat(2);
+				}
+			}
+		}
+
+		private static void AssignSerialise (SerialisationArgs args)
+		{
+			var afterDecl = (args.Peek().Token == ParseToken.OP) && (args.Peek().Text == "=");
+			var other = (args.Peek().Token == ParseToken.TEXT) && (args.Peek(1).Text == "=");
+			if (!afterDecl && !other) return;
+			MarkDebug(args);
+			args.OutToken(BinaryToken.ASSIGN);
+			if (afterDecl && args.CanPeek(-1)) {
+				args.OutBytes(GetNameBytes(args.Peek(-1).Text, args.IsDebug));
+				args.Eat();
+			} else {
+				args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
+				args.Eat(2);
+			}
+			//Defer to 2nd Rate Serialiser
+			int prevAtom;
+			do {
+				prevAtom = args.CurrentIndex;
+				Rate2(args);
+			} while (args.CurrentIndex != prevAtom);
+		}
+
+		private static void NameRefSerialise (SerialisationArgs args)
+		{
+			if (args.Peek().Token != ParseToken.TEXT) return;
+			args.OutToken(BinaryToken.REFERENCE);
+			args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
+			args.Eat();
+		}
+
+		private static void LiteralSerialise (SerialisationArgs args)
+		{
+			switch (args.Peek().Token) {
+				case ParseToken.NUMBER:
+					if (args.Peek().Text.Contains('.')) {
+						args.OutToken(BinaryToken.LIT_FLO);
+						args.OutBytes(BitConverter.GetBytes(float.Parse(args.Next().Text)));
+					} else {
+						args.OutToken(BinaryToken.LIT_INT);
+						args.OutBytes(BitConverter.GetBytes(int.Parse(args.Next().Text)));
+					}
+					break;
+				case ParseToken.STRING:
+					args.OutToken(BinaryToken.LIT_STR);
+					args.OutBytes(GetStringBytes(args.Next().Text));
+					break;
+				case ParseToken.CHAR:
+					args.OutToken(BinaryToken.LIT_CHR);
+					args.OutByte((byte)char.Parse(args.Next().Text));
+					break;
+			}
+		}
+
+		private static void OperatorSerialise (SerialisationArgs args)
+		{
+			if (args.Peek().Token != ParseToken.OP) return;
+			var opChar = Array.IndexOf(Dict.Operators, char.Parse(args.Peek().Text));
+			if (opChar <= -1) return;
+			args.OutToken(BinaryToken.OPERATOR);
+			args.OutByte((byte)opChar);
+			args.Eat();
+		}
+
+		private static void NewlineSerialise (SerialisationArgs args)
+		{
+			if (args.Peek().Token != ParseToken.ENDLIN) return;
+			MarkDebug(args);
+			args.OutToken(BinaryToken.NEWLINE);
+			args.Eat();
+		}
+
+		#endregion
+
+        #region Serialisation Helper Methods
+
+        private static byte[] GetNameBytes (string text, bool isDebug) =>
+	        isDebug ? GetStringBytes(text) : BitConverter.GetBytes(text.GetHashCode());
+
+        private static byte[] GetStringBytes (string text) =>
+	        BitConverter.GetBytes(text.Length).Concat(Encoding.UTF8.GetBytes(text)).ToArray();
+
+        static void MarkDebug (SerialisationArgs args)
+        {
+	        if (!args.IsDebug) return;
+	        args.OutBytes(BitConverter.GetBytes(args.Peek().OriginalPosition.Line));
+	        args.OutBytes(BitConverter.GetBytes(args.Peek().OriginalPosition.Column));
         }
 
-        private class NameRefSerialiser : BaseSerialiser
-        {
-	        public NameRefSerialiser (BaseSerialiser child) : base(child) { }
+		#endregion
 
-	        public override void Serialise (SerialisationArgs args)
-	        {
-		        if (args.Peek().Token == ParseToken.TEXT) {
-			        args.OutToken(BinaryToken.REFERENCE);
-			        args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
-			        args.Eat();
-		        }
-		        Child?.Serialise(args);
-	        }
-        }
-
-        private class LiteralSerialiser : BaseSerialiser
-        {
-	        public LiteralSerialiser (BaseSerialiser child) : base(child) { }
-
-	        public override void Serialise (SerialisationArgs args)
-	        {
-		        switch (args.Peek().Token) {
-			        case ParseToken.NUMBER:
-				        if (args.Peek().Text.Contains('.')) {
-					        args.OutToken(BinaryToken.LIT_FLO);
-					        args.OutBytes(BitConverter.GetBytes(float.Parse(args.Next().Text)));
-				        } else {
-					        args.OutToken(BinaryToken.LIT_INT);
-					        args.OutBytes(BitConverter.GetBytes(int.Parse(args.Next().Text)));
-				        }
-				        break;
-			        case ParseToken.STRING:
-				        args.OutToken(BinaryToken.LIT_STR);
-				        args.OutBytes(GetStringBytes(args.Next().Text));
-				        break;
-			        case ParseToken.CHAR:
-				        args.OutToken(BinaryToken.LIT_CHR);
-				        args.OutByte((byte)char.Parse(args.Next().Text));
-				        break;
-		        }
-		        Child?.Serialise(args);
-	        }
-        }
-
-        private class OperatorSerialiser : BaseSerialiser
-        {
-	        public OperatorSerialiser (BaseSerialiser child) : base(child) { }
-
-	        public override void Serialise (SerialisationArgs args)
-	        {
-		        if (args.Peek().Token == ParseToken.OP) {
-			        var opChar = Array.IndexOf(Dict.Operators, char.Parse(args.Peek().Text));
-			        if (opChar > -1) {
-				        args.OutToken(BinaryToken.OPERATOR);
-				        args.OutByte((byte)opChar);
-						args.Eat();
-			        }
-		        }
-		        Child?.Serialise(args);
-	        }
-        }
-
-        private class NewlineSerialiser : BaseSerialiser
-        {
-            public NewlineSerialiser (BaseSerialiser child) : base(child) { }
-
-            public override void Serialise (SerialisationArgs args)
-            {
-                if (args.Peek().Token == ParseToken.ENDLIN) {
-	                MarkDebug(args);
-                    args.OutToken(BinaryToken.NEWLINE);
-                    args.Eat();
-                    return;
-                }
-                Child?.Serialise(args);
-            }
-        }
-
-        #endregion
-
-        #region Helper Classes
+        #region SerialisationArgs
 
         private class SerialisationArgs
         {
