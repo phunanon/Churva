@@ -1,1 +1,1 @@
-**ChurvaDotnet** - C# .NET Core 2.2 interpreter, aiming for full standards compliance.
+**ChurvaDotnet** - C# .NET Core 3.0 interpreter, aiming for full standards compliance.
