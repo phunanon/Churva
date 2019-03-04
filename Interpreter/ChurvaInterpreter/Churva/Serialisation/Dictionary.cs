@@ -18,14 +18,17 @@ namespace ChurvaInterpreter
         NEWLINE,
 		REFERENCE,
 		LIT_INT, LIT_FLO, LIT_CHR, LIT_STR,
-		OPERATOR
+		OPERATOR, SCOPE
     }
 
     public enum NativeDataType : byte
     {
         var,
+        boo,
         u08, u16, u32, u64,
-        i08, i16, i32, i64
+        i08, i16, i32, i64,
+        dec,
+        str
     }
 
 	public static class Dict

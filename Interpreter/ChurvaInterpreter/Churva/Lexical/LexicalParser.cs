@@ -12,23 +12,27 @@ namespace ChurvaInterpreter
 		{
 			var atoms = new List<ParseAtom>();
 
-			TextOrOperatorWithIndent(source, atoms);
+			TextOpIndentNewline(source, atoms);
 			TextOrNumber(atoms);
 			ReconstructFloats(atoms);
 			ConstructLiterals(atoms);
 			ReconstructOperators(atoms);
+			//TODO: Detect code blocks: ENDBLK
 
 			return atoms;
 		}
 
-		private static void TextOrOperatorWithIndent (IEnumerable<string> source, List<ParseAtom> atoms)
+		private static void TextOpIndentNewline (IEnumerable<string> source, List<ParseAtom> atoms)
 		{
 			ushort linNum = 0;
 			var indent = 0;
 			foreach (var line in source) {
 				//Count indents, detect dedents
+				// Spaces
 				var initialIndent = line.TakeWhile(c => c == ' ').ToArray();
+				//Tabs
 				if (!initialIndent.Any()) initialIndent = line.TakeWhile(c => c == '\t').ToArray();
+				//Was there any indent?
 				if (initialIndent.Any()) {
 					var newIndent = initialIndent.Length / (initialIndent[0] == '\t' ? 1 : 4);
 					if (newIndent != indent) {
@@ -87,9 +91,9 @@ namespace ChurvaInterpreter
 			for (int a = atoms.Count - 3; a >= 0; --a) {
 				var inspect = atoms.Skip(a).Take(3).ToArray();
 				if ((inspect[0].Text + inspect[2].Text == "''") || (inspect[0].Text + inspect[2].Text == "\"\"")) {
-					inspect[0].Token = inspect[0].Text == "'" ? ParseToken.CHAR : ParseToken.STRING;
-					inspect[0].Text = Regex.Unescape(inspect[1].Text);
-					atoms.RemoveAt(a + 1);
+					inspect[1].Token = inspect[0].Text == "'" ? ParseToken.CHAR : ParseToken.STRING;
+					inspect[1].Text = Regex.Unescape(inspect[1].Text);
+					atoms.RemoveAt(a);
 					atoms.RemoveAt(a + 1);
 				}
 			}
@@ -134,7 +138,7 @@ namespace ChurvaInterpreter
 					//Collect whole char/string literal
 					while (true) {
 						alphas = alphas.Concat(next.TakeWhile(ch => ch != '"' && ch != '\'').ToArray()).ToArray();
-						if (alphas.Last() != '\\') break;//Check if we were going to escape
+						if (alphas.Last() != '\\') break; //Check if we were going to escape
 					}
 
 					yield return (c, new string(alphas), true);
@@ -150,7 +154,7 @@ namespace ChurvaInterpreter
 					else {
 						var ch = next[0];
 						if (ch == '"' || ch == '\'') escapable = ch;
-						else yield return (c, $"{ch}", false);
+						yield return (c, $"{ch}", false);
 					}
 
 					c += alphas.Length == 0 ? 1 : alphas.Length;

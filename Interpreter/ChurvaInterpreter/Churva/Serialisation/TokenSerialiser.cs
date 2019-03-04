@@ -38,7 +38,7 @@ namespace ChurvaInterpreter
             while (!args.IsExhausted) {
                 Rate1.Serialise(args);
                 if (prevAtom == args.CurrentIndex) {
-                    Log.Error("End of competence", args.Peek().OriginalPosition, args.Peek().Text);
+                    Log.Error("End of serialisation competence", args.Peek().OriginalPosition, args.Peek().Text);
                     break;
                 }
                 prevAtom = args.CurrentIndex;
