@@ -102,7 +102,7 @@ namespace ChurvaDotnet
 		private static void ReconstructOperators (IList<ParseAtom> atoms)
 		{
             var prevOp = "";
-			for (int a = atoms.Count - 2; a >= 0; --a) {
+			for (var a = atoms.Count - 2; a >= 0; --a) {
 				if (atoms[a].Token != ParseToken.OP) {
 					prevOp = "";
 					continue;
@@ -125,7 +125,7 @@ namespace ChurvaDotnet
 		{
 			var escapable = '\0';
 			for (var c = 0; c < text.Length;) {
-				var next = text.Skip(c).ToArray();
+				char[] next = text.Skip(c).ToArray();
 				if (next[0] == ' ') {
 					++c;
 					continue;

@@ -10,18 +10,10 @@ namespace ChurvaDotnet
         public static byte[] Serialise (List<ParseAtom> atoms, bool isDebug)
         {
             var bytes = new List<byte>();
-            if (isDebug) bytes.Add((byte) BinaryToken.DEBUG);
+            if (isDebug) bytes.Add((byte) NativeToken.DEBUG);
             
-            var args = new SerialisationArgs(atoms, bytes, isDebug);
-            var prevAtom = 0;
-            while (!args.IsExhausted) {
-                Rate1(args);
-                if (prevAtom == args.CurrentIndex) {
-                    Log.Error("End of serialisation competence", args.Peek().OriginalPos, args.Peek().Text);
-                    break;
-                }
-                prevAtom = args.CurrentIndex;
-            }
+            Rate1(new SerialisationArgs(atoms, bytes, isDebug));
+
             return bytes.ToArray();
         }
 
@@ -29,20 +21,36 @@ namespace ChurvaDotnet
 
         private static void Rate1 (SerialisationArgs args)
         {
-	        StatementSerialise(args);
-	        VarDeclSerialise(args);
-	        AssignSerialise(args);
-	        NewlineSerialise(args);
-	        IndentSerialise(args);
+	        var prevAtom = 0;
+	        while (!args.IsExhausted) {
+		        StatementSerialise(args);
+		        SubDeclSerialise(args);
+		        VarDeclSerialise(args);
+		        AssignSerialise(args);
+		        NameRefSerialise(args);
+		        NewlineSerialise(args);
+		        IndentSerialise(args);
+		        if (prevAtom == args.CurrentIndex) {
+			        Log.Error("End of serialisation competence", args.Peek().OriginalPos, args.Peek().Text);
+			        return;
+		        }
+		        prevAtom = args.CurrentIndex;
+	        }
         }
 
         private static void Rate2 (SerialisationArgs args)
         {
-	        VarDeclSerialise(args);
-	        AssignSerialise(args);
-	        NameRefSerialise(args);
-	        LiteralSerialise(args);
-	        OperatorSerialise(args);
+	        var prevAtom = 0;
+	        while (!args.IsExhausted) {
+		        VarDeclSerialise(args);
+		        AssignSerialise(args);
+		        NameRefSerialise(args);
+		        LiteralSerialise(args);
+		        OperatorSerialise(args);
+		        if (prevAtom == args.CurrentIndex)
+			        return;
+		        prevAtom = args.CurrentIndex;
+	        }
         }
 
 		#endregion
@@ -53,30 +61,92 @@ namespace ChurvaDotnet
 		{
 			var statement = Array.IndexOf(Dict.Statements, args.Peek().Text);
 			if (statement == -1) return;
+			var logInfo = $"{args.Peek(0).Text} ";
 			switch (args.Next().Text) {
 				case "each":
-					Action OutNextName = () => args.OutBytes(GetNameBytes(args.Next().Text, args.IsDebug));
+					void OutNextName () => args.OutBytes(GetNameBytes(args.Next().Text, args));
 					//Determine if with or without iterator
 					if (args.Peek(1).Text == ",") {
-						args.OutToken(BinaryToken.ST_EACHIT);
+						logInfo += $"\"{args.Peek().Text}\"";
+						args.OutToken(NativeToken.ST_EACHIT);
 						OutNextName();
 						args.Skip(); //,
-					} else args.OutToken(BinaryToken.ST_EACH);
+					} else {
+						args.OutToken(NativeToken.ST_EACH);
+					}
+
+					logInfo += $" \"{args.Peek().Text}\"";
 					OutNextName();
 					args.Skip(); //:
-					OutNextName();
 					break;
 			}
+			Log.Step("Serial: statement", logInfo);
 		}
+
+		/// <summary>Serialises type with native/user prefix</summary>
+		private static void OutNextType (SerialisationArgs args)
+		{
+			if (IsNativeType(args.Peek().Text)) {
+				args.OutByte(0x10);
+				args.OutByte((byte)Enum.Parse<NativeDataType>(args.Next().Text));
+			} else {
+				args.OutByte(0x11);
+				args.OutBytes(GetNameBytes(args.Next().Text, args));
+			}
+		}
+
+		private static void OutNextTypeAndName (SerialisationArgs args)
+		{
+			OutNextType(args);
+			args.OutBytes(GetNameBytes(args.Next().Text, args));
+		}
+
+		private static void SubDeclSerialise (SerialisationArgs args)
+		{
+			if (args.Peek().Text != "sub") return;
+			var pos = args.Peek().OriginalPos;
+			var subName = args.Peek(1).Text;
+			Log.Step("Serial: subroutine", subName);
+			args.OutToken(NativeToken.DECL_SUB);
+			args.OutBytes(GetNameBytes(subName, args));
+			args.Skip(2); //sub name
+			//Next byte is: 4-bit scheme, 4-bit 0:native 1:user return type
+			if (args.Peek().Token == ParseToken.ENDLIN || args.Peek().Text == "=>") {
+				//No parameters, no returns
+				args.OutByte(0x00);
+				args.Skip();
+			} else {
+				if (args.Peek().Text == ":") {
+					//No parameters, returns
+					args.Skip(); //:
+					OutNextType(args);
+				} else if (args.Peek().Text == "(") {
+					byte timeout = 0;
+					while (args.Peek().Text != ")" && timeout++ < 255) {
+						args.Skip(); //( or ,
+						OutNextTypeAndName(args);
+					}
+					if (timeout == 255) Log.Error($"sub `{subName}` parameters unclosed", pos, "");
+					else args.Skip(); //)
+				}
+			}
+		}
+
+		private static bool IsNativeType (string type) => Dict.DataTypes.Contains(type);
 
 		private static void VarDeclSerialise (SerialisationArgs args)
 		{
 			if (args.Peek().Token == ParseToken.TEXT && args.Peek(1).Token == ParseToken.TEXT) {
-				if (Dict.DataTypes.Contains(args.Peek().Text)) {
-					args.OutToken(BinaryToken.DECL_VARIABLE);
-					args.OutByte((byte) Enum.Parse<NativeDataType>(args.Peek().Text));
-					args.OutBytes(GetNameBytes(args.Peek(1).Text, args.IsDebug));
-					args.Skip(2);
+				Log.Step("Serial: vardecl", $"{args.Peek().Text} \"{args.Peek(1).Text}\"");
+				//Are we declaring native, or user type?
+				if (IsNativeType(args.Peek().Text)) {
+					args.OutToken(NativeToken.DECL_NATVAR);
+					args.OutByte((byte) Enum.Parse<NativeDataType>(args.Next().Text)); //type
+					args.OutBytes(GetNameBytes(args.Next().Text, args)); //name
+				} else {
+					args.OutToken(NativeToken.DECL_USERVAR);
+					args.OutBytes(GetNameBytes(args.Next().Text, args)); //type
+					args.OutBytes(GetNameBytes(args.Next().Text, args)); //name
 				}
 			}
 		}
@@ -86,59 +156,66 @@ namespace ChurvaDotnet
 			var afterDecl = (args.Peek().Token == ParseToken.OP) && (args.Peek().Text == "=");
 			var other = (args.Peek().Token == ParseToken.TEXT) && (args.Peek(1).Text == "=");
 			if (!afterDecl && !other) return;
-			args.OutToken(BinaryToken.ASSIGN);
+
+			args.OutToken(NativeToken.ASSIGN);
 			if (afterDecl && args.CanPeek(-1)) {
-				args.OutBytes(GetNameBytes(args.Peek(-1).Text, args.IsDebug));
+				Log.Step("Serial: assign", $"{args.Peek(-1).Text}=");
+				args.OutBytes(GetNameBytes(args.Peek(-1).Text, args));
 				args.Skip();
 			} else {
-				args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
+				Log.Step("Serial: assign", $"{args.Peek().Text}=");
+				args.OutBytes(GetNameBytes(args.Peek().Text, args));
 				args.Skip(2);
 			}
 			//Defer to 2nd Rate Serialiser
-			int prevAtom;
-			do {
-				prevAtom = args.CurrentIndex;
-				Rate2(args);
-			} while (args.CurrentIndex != prevAtom);
+			Rate2(args);
 		}
 
 		private static void NameRefSerialise (SerialisationArgs args)
 		{
 			if (args.Peek().Token != ParseToken.TEXT) return;
-			args.OutToken(BinaryToken.REFERENCE);
-			args.OutBytes(GetNameBytes(args.Peek().Text, args.IsDebug));
+			Log.Step("Serial: nameref", args.Peek().Text);
+			args.OutToken(NativeToken.REFERENCE);
+			args.OutBytes(GetNameBytes(args.Peek().Text, args));
 			args.Skip();
+			Rate2(args);
 		}
 
 		private static void LiteralSerialise (SerialisationArgs args)
 		{
+			var log = true;
 			switch (args.Peek().Token) {
 				case ParseToken.NUMBER:
 					if (args.Peek().Text.Contains('.')) {
-						args.OutToken(BinaryToken.LIT_FLO);
+						args.OutToken(NativeToken.LIT_FLO);
 						args.OutBytes(BitConverter.GetBytes(float.Parse(args.Next().Text)));
 					} else {
-						args.OutToken(BinaryToken.LIT_INT);
+						args.OutToken(NativeToken.LIT_INT);
 						args.OutBytes(BitConverter.GetBytes(int.Parse(args.Next().Text)));
 					}
 					break;
 				case ParseToken.STRING:
-					args.OutToken(BinaryToken.LIT_STR);
+					args.OutToken(NativeToken.LIT_STR);
 					args.OutBytes(GetStringBytes(args.Next().Text));
 					break;
 				case ParseToken.CHAR:
-					args.OutToken(BinaryToken.LIT_CHR);
+					args.OutToken(NativeToken.LIT_CHR);
 					args.OutByte((byte)char.Parse(args.Next().Text));
 					break;
+				default:
+					log = false;
+					break;
 			}
+			if (log) Log.Step("Serial: literal", args.Peek(-1).Text);
 		}
 
 		private static void OperatorSerialise (SerialisationArgs args)
 		{
 			if (args.Peek().Token != ParseToken.OP) return;
-			var opChar = Array.IndexOf(Dict.Operators, char.Parse(args.Peek().Text));
+			var opChar = Array.IndexOf(Dict.Operators, args.Peek().Text);
 			if (opChar <= -1) return;
-			args.OutToken(BinaryToken.OPERATOR);
+			Log.Step("Serial: operator", args.Peek().Text);
+			args.OutToken(NativeToken.OPERATOR);
 			args.OutByte((byte)opChar);
 			args.Skip();
 		}
@@ -146,7 +223,8 @@ namespace ChurvaDotnet
 		private static void NewlineSerialise (SerialisationArgs args)
 		{
 			if (args.Peek().Token != ParseToken.ENDLIN) return;
-			args.OutToken(BinaryToken.NEWLINE);
+			Log.Step("Serial: newline", "");
+			args.OutToken(NativeToken.NEWLINE);
 			args.Skip();
 		}
 
@@ -155,7 +233,8 @@ namespace ChurvaDotnet
 			var isIndent = args.Peek().Token == ParseToken.INDENT;
 			var isDedent = args.Peek().Token == ParseToken.DEDENT;
 			if (!isIndent && !isDedent) return;
-			args.OutToken(isIndent ? BinaryToken.INDENT : BinaryToken.DEDENT);
+			Log.Step("Serial: indent", args.Peek().Text);
+			args.OutToken(isIndent ? NativeToken.INDENT : NativeToken.DEDENT);
 			args.OutByte(byte.Parse(args.Next().Text));
 		}
 
@@ -163,8 +242,8 @@ namespace ChurvaDotnet
 
         #region Serialisation Helper Methods
 
-        private static byte[] GetNameBytes (string text, bool isDebug) =>
-	        isDebug ? GetStringBytes(text) : BitConverter.GetBytes(text.GetHashCode());
+        private static byte[] GetNameBytes (string text, SerialisationArgs args) =>
+	        args.IsDebug ? GetStringBytes(text) : BitConverter.GetBytes(text.GetHashCode());
 
         private static byte[] GetStringBytes (string text) =>
 	        BitConverter.GetBytes(text.Length).Concat(Encoding.UTF8.GetBytes(text)).ToArray();
@@ -178,7 +257,7 @@ namespace ChurvaDotnet
 			private readonly ParseAtom _nullAtom = new ParseAtom(0, 0, ParseToken.UNKNOWN, "");
             private readonly List<ParseAtom> _atoms;
 	        private readonly List<byte> _bytes;
-            public bool IsDebug;
+            public readonly bool IsDebug;
             
             public SerialisationArgs (List<ParseAtom> atoms, List<byte> bytes, bool isDebug)
             {
@@ -193,6 +272,7 @@ namespace ChurvaDotnet
 
             public ParseAtom Next (int advance = 1)
             {
+	            if (!CanPeek(advance)) return _nullAtom;
                 var atom = _atoms[CurrentIndex];
                 Skip(advance);
                 return atom;
@@ -208,7 +288,7 @@ namespace ChurvaDotnet
 
 	        public void Skip (int advance = 1) => CurrentIndex += advance;
 
-	        public void OutToken (BinaryToken t)
+	        public void OutToken (NativeToken t)
 	        {
 				//Mark line & column before token
 		        if (IsDebug) {

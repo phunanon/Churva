@@ -2,6 +2,25 @@
 
 This is a descriptive documentation on the ChurvaDotnet implementation.
 
+## Usage
+
+First, ensure you have .NET Core 3.0 or later installed on your machine.  
+Then execute `dotnet run [[arguments] program_file_path]`, where the file is `.ch` or `.ku`, and the arguments are one of the following:
+
+| arg | description         |
+| --- | ------------------- |
+| r   | release mode        |
+| a   | list atoms          |
+| b   | echo bytes          |
+| s   | log serialisation   |
+| d   | log deserialisation |
+| e   | log execution       |
+
+Debug mode is default.
+
+### Debug Information
+
+
 ## Implementation
 
 This program takes four steps to interpret Churva source code:

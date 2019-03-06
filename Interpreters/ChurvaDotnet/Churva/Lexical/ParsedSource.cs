@@ -18,7 +18,7 @@ namespace ChurvaDotnet
 
 	    public override string ToString ()
 	    {
-		    var text = Text.Length == 1 && Text[0] < 32 ? Regex.Escape(Text) : Text;
+		    var text = Log.EscapeChars(Text);
 		    var tokenName = Dict.ParseTokens[(int)Token];
 		    return $"{OriginalPos.Line,-5}{OriginalPos.Column,-4}{tokenName,-8}{text}";
 	    }
