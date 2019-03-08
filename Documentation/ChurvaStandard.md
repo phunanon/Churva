@@ -4,19 +4,20 @@ The prescriptive standardisation of the Churva programming language.
 
 ## Introduction
 
+An experimental programming language in development.
 
 ## Syntax
 ### Data Types, Declaration, and Assignment
 
 | Data Type          | Token               | Size                        | Evaluation |
 | ------------------ | ------------------- | --------------------------- | ---------- |
-| explicitly empty   | `nul`               | 0                           | value      |
+| explicitly empty   | `nul`               | 0                           | null       |
 | any (determined)   | `var`               | variable                    | any        |
-| boolean            | `boo`               | 1 bit                       | value      |
-| integers un/signed | `u[bits]`/`i[bits]` | 2^n, 08 doubling to 64 bits | value      |
-| floating point     | `f32/f64`           | 2^32 or 2^64 bits           | value      |
-| decimal            | `dec`               | variable                    | value      |
-| string             | `str`               | variable                    | value      |
+| boolean            | `boo`               | 1 bit                       | numeric    |
+| integers un/signed | `u[bits]`/`i[bits]` | 2^n, 08 doubling to 64 bits | numeric    |
+| floating point     | `f32/f64`           | 2^32 or 2^64 bits           | numeric    |
+| decimal            | `dec`               | variable                    | numeric    |
+| string             | `str`               | variable                    | textual    |
 | variable pointer   | `token*`            | address size                | pointer    |
 | subroutine pointer | `sub`               | address size                | pointer    |
 
@@ -28,6 +29,19 @@ Assignment can be of any evaluated code. Possible methods of declaration and ass
 
 * Pointer assignment takes address of variable by default.
 * Evaluation of whole declaration and assignment statement returns value for value types, or pointer for pointer types
+
+#### Casting
+
+Any native datatype supports casting by using its name as a function, such as `i32(string)`. These are the supported casts:
+
+| from        | to          |
+| ----------- | ----------- |
+| any numeric | any numeric |
+| string      | any numeric |
+| any numeric | string      |
+| any pointer | u64         |
+
+Any improper cast will throw an exception.
 
 ### Subroutines
 #### Named
@@ -122,6 +136,7 @@ Conditionals are evaluated as true when their integer representation is non-zero
 
 ### Classes
 
+no new, constructor is function returning pointer
 Members: ->, .
 
 ### File Includes
@@ -131,4 +146,6 @@ error !! alternative
 
 ## Environment
 
-Term, Clock
+### Native Namespaces
+
+Term, Clock, File

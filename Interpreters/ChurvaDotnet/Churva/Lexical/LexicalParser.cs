@@ -86,6 +86,7 @@ namespace ChurvaDotnet
 
 		private static void ConstructLiterals (IList<ParseAtom> atoms)
 		{
+			//Scan backwards, inspect for ' x ' or " x " patterns, replace with literal
 			for (int a = atoms.Count - 3; a >= 0; --a) {
 				var inspect = atoms.Skip(a).Take(3).ToArray();
 				if ((inspect[0].Text + inspect[2].Text == "''") || (inspect[0].Text + inspect[2].Text == "\"\"")) {
@@ -125,8 +126,8 @@ namespace ChurvaDotnet
 		{
 			var escapable = '\0';
 			for (var c = 0; c < text.Length;) {
-				char[] next = text.Skip(c).ToArray();
-				if (next[0] == ' ') {
+				char[] collect = text.Skip(c).ToArray();
+				if (collect[0] == ' ') {
 					++c;
 					continue;
 				}
@@ -134,10 +135,8 @@ namespace ChurvaDotnet
 				char[] alphas = { };
 				if (escapable != '\0') {
 					//Collect whole char/string literal
-					while (true) {
-						alphas = alphas.Concat(next.TakeWhile(ch => ch != '"' && ch != '\'').ToArray()).ToArray();
-						if (alphas.Last() != '\\') break; //Check if we were going to escape
-					}
+					var grace = false;
+					alphas = collect.TakeWhile(ch => CollectWithEscapes(ch, escapable, ref grace)).ToArray();
 
 					yield return (c, new string(alphas), true);
 					//Handle end " or '
@@ -145,12 +144,12 @@ namespace ChurvaDotnet
 					c += alphas.Length + 1;
 					escapable = '\0';
 				} else {
-					alphas = next.TakeWhile(char.IsLetterOrDigit).ToArray();
+					alphas = collect.TakeWhile(char.IsLetterOrDigit).ToArray();
 
 					//Yield alphanumeric string, or single character
 					if (alphas.Any()) yield return (c, new string(alphas), true);
 					else {
-						var ch = next[0];
+						var ch = collect[0];
 						if (ch == '"' || ch == '\'') escapable = ch;
 						yield return (c, $"{ch}", false);
 					}
@@ -160,6 +159,21 @@ namespace ChurvaDotnet
 			}
 		}
 
-		private static bool TestPattern<T> (T[] array, params T[] pattern) => pattern.Length <= array.Length && array.Take(pattern.Length).SequenceEqual(pattern);
+        private static bool CollectWithEscapes (in char ch, char escapable, ref bool grace)
+        {
+	        if (grace) {
+		        grace = false;
+		        return true;
+	        } else {
+		        if (ch == '\\') {
+			        grace = true;
+			        return true;
+		        } else {
+			        return ch != (escapable == '"' ? '"' : '\'');
+		        }
+	        }
+        }
+
+        private static bool TestPattern<T> (T[] array, params T[] pattern) => pattern.Length <= array.Length && array.Take(pattern.Length).SequenceEqual(pattern);
 	}
 }

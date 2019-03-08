@@ -8,7 +8,7 @@ namespace ChurvaDotnet
 {
     class Program
     {
-		private static Churva _churva = new Churva();
+		private static readonly Churva _churva = new Churva();
 
         static void Main(string[] args)
         {

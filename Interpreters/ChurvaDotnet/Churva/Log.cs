@@ -16,10 +16,9 @@ namespace ChurvaDotnet
 
 	    public static void Step (string step, string info)
 	    {
-		    if (DoLog) {
-			    ColourOut("LOG", ConsoleColor.Black, ConsoleColor.White);
-			    Console.WriteLine($" {step}\t{EscapeChars(info)}");
-		    }
+		    if (!DoLog) return;
+		    ColourOut("LOG", ConsoleColor.Black, ConsoleColor.White);
+		    Console.WriteLine($" {step}\t{EscapeChars(info)}");
 	    }
 
 	    public static string EscapeChars (string str) => new string(str.SelectMany(c => c < 32 ? Regex.Escape(c.ToString()).ToCharArray() : new []{c}).ToArray());

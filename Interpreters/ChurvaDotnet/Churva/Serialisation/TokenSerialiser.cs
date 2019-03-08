@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//TODO: name.name = assignment, name.name()
+
 namespace ChurvaDotnet
 {
     internal static class TokenSerialiser
@@ -11,7 +11,7 @@ namespace ChurvaDotnet
         {
             var bytes = new List<byte>();
             if (isDebug) bytes.Add((byte) NativeToken.DEBUG);
-            
+
             Rate1(new SerialisationArgs(atoms, bytes, isDebug));
 
             return bytes.ToArray();
@@ -214,9 +214,15 @@ namespace ChurvaDotnet
 			if (args.Peek().Token != ParseToken.OP) return;
 			var opChar = Array.IndexOf(Dict.Operators, args.Peek().Text);
 			if (opChar <= -1) return;
-			Log.Step("Serial: operator", args.Peek().Text);
-			args.OutToken(NativeToken.OPERATOR);
-			args.OutByte((byte)opChar);
+			if (args.Peek().Text == ".") {
+				Log.Step("Serial: scope", args.Peek().Text);
+				args.OutToken(NativeToken.SCOPE);
+			} else {
+				Log.Step("Serial: operator", args.Peek().Text);
+				args.OutToken(NativeToken.OPERATOR);
+				args.OutByte((byte)opChar);
+			}
+
 			args.Skip();
 		}
 
