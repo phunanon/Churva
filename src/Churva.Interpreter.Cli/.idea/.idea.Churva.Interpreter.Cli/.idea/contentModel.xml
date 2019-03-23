@@ -63,6 +63,7 @@
           </e>
         </e>
         <e p="Type" t="Include">
+          <e p="Boo.cs" t="Include" />
           <e p="F" t="Include">
             <e p="F128.cs" t="Include" />
             <e p="F32.cs" t="Include" />
