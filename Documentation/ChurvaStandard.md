@@ -123,6 +123,7 @@ Conditionals are evaluated as true when their integer representation is non-zero
 | `a * b`                 | arithmetical multiplication |
 | `a / b`                 | arithmetical division       |
 | `a % b`                 | arithmetical modulo         |
+| `a ** b`                | arithmetical exponentiation |
 | `a & b`                 | bitwise AND                 |
 | <code>a &#124; b</code> | bitwise OR                  |
 | `a ^ b`                 | bitwise XOR                 |
@@ -131,8 +132,14 @@ Conditionals are evaluated as true when their integer representation is non-zero
 
 | Conditional operator | Action                                          |
 | -------------------- | ----------------------------------------------- |
-| `code1 !! code2`     | Evaluate code2 if code1 throws an exception     |
-| `value in array`     | Evaluate as true if a value is within an array |
+| `a == b`             | Evaluate as `a` if `a` equals `b`, else false   |
+| `a ?? b`             | Evaluate as `a` if `a` is true, else `b`        |
+| `a > b`              | |
+| `a < b`              | |
+| `a >= b`             | |
+| `a <= b`             | |
+| `code1 !! code2`     | Evaluate `code2` if `code1` throws an exception |
+| `value in array`     | Evaluate as true if `value` is within `array`   |
 
 ### Classes
 
