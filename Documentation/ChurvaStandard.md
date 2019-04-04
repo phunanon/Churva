@@ -20,15 +20,24 @@ An experimental programming language in development.
 | string             | `str`               | variable                    | textual    |
 | variable pointer   | `token*`            | address size                | pointer    |
 | subroutine pointer | `sub`               | address size                | pointer    |
+| array of data type | `type[size]`        | 2^32 elements               | pointer    |
+| list of data type  | `type[]`            | 2^32 elements               | pointer    |
 
 Assignment can be of any evaluated code. Possible methods of declaration and assignment:
 
     i32 variable1      //Declared
-	variable1 = 42     //Assigned
-	i32 variable2 = 42 //Declared & Assigned
+    variable1 = 42     //Assigned
+    i32 variable2 = 42 //Declared & Assigned
 
 * Pointer assignment takes address of variable by default.
 * Evaluation of whole declaration and assignment statement returns value for value types, or pointer for pointer types
+
+#### Literals
+
+* Represent a UTF-8 string up to 2^32 characters in length with `"string"`
+* Represent a boolean with either `true` or `false` 
+* Represent a numeric value with `0` or `0.0` of any length of digits
+    * Freely separate digits with `'`
 
 #### Casting
 
@@ -77,13 +86,14 @@ Here, `myNumber` is assigned as the value of `sum`:
 | `else`                         | Evaluate block if previous `if` condition was false                                 |
 | `elif condition`               | Same as `else`, and its condition is true                                           |
 | `condition ? true : false`     | Evaluate blocks depending on condition                                              |
-| `once condition`               | Evaluate block if condition is true, only once                                    |
+| `once condition`               | Evaluate block if condition is true, only once                                      |
 | `while condition`              | Loop block if present while condition is true                                       |
 | `for first; condition; repeat` | Evaluate `first` if present, loop block & repeat if present while condition is true |
 | `each item, iterator: array`   | Loop block, advance item & iterator through array each loop                         |
 | `each item: array`             | Loop block, advance item through array each loop                                    |
 | `skip`                         | Skip to next iteration                                                              |
 | `finish`                       | Finish loop                                                                         |
+| `exit`                         | Exit program                                                                        |
 
 Single line statements: `statement => code`
 
@@ -130,16 +140,17 @@ Conditionals are evaluated as true when their integer representation is non-zero
 | `a >> b`                | bitwise right shift         |
 | `a << b`                | bitwise left shift          |
 
-| Conditional operator | Action                                          |
-| -------------------- | ----------------------------------------------- |
-| `a == b`             | Evaluate as `a` if `a` equals `b`, else false   |
-| `a ?? b`             | Evaluate as `a` if `a` is true, else `b`        |
+| Conditional operator | Action                                               |
+| -------------------- | ---------------------------------------------------- |
+| `a == b`             | Evaluate as `a` if `a` is equal to `b`, else false   |
+| `a != b`             | Evaluate as `a` if `a` is inequal to `b`, else false |
+| `a ?? b`             | Evaluate as `a` if `a` is true, else `b`             |
 | `a > b`              | |
 | `a < b`              | |
 | `a >= b`             | |
 | `a <= b`             | |
-| `code1 !! code2`     | Evaluate `code2` if `code1` throws an exception |
-| `value in array`     | Evaluate as true if `value` is within `array`   |
+| `code1 !! code2`     | Evaluate as `code2` if `code1` throws an exception   |
+| `value in array`     | Evaluate as true if `value` is within `array`        |
 
 ### Classes
 
@@ -155,4 +166,4 @@ error !! alternative
 
 ### Native Namespaces
 
-Term, Clock, File
+Term, Clock, IO.File
