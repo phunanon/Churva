@@ -40,6 +40,7 @@ namespace Churva.Interpreter.Cli
                     if (line == _quit)
                         break;
                     var matched = false;
+                    var assignment = false;
                     foreach (var key in Keywords.Keys)
                     {
                         var match = key?.Where(itm => line.StartsWith(itm)).ToList();
@@ -57,12 +58,9 @@ namespace Churva.Interpreter.Cli
                     if (matched) continue;
 
                     var instanceExist = false;
-                    if (!matched)
-                    {
-                        instanceExist = GetInstance(line.Trim(), out var instance);
-                        if(instanceExist)
-                            Console.WriteLine(instance.Value.ToString());
-                    }
+                    instanceExist = GetInstance(line.Trim(), out var inst);
+                    if(instanceExist)
+                        Console.WriteLine(inst.Value.ToString());
                     if(!instanceExist)
                     {
                         Console.WriteLine($"No instance called: {line}");

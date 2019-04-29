@@ -35,7 +35,7 @@ namespace Churva.Interpreter.BluePrints.Interfaces
         public virtual Boolean Validate(String[] strings)
         {
             if (!strings.Any()) return false;
-            var ret = ParseValueInstance(this, strings);
+            var ret = ValidateValueInstance(this, strings);
             InstanceName = ret[0];
             if (SetValueByObject(ret[1]))
                 Console.WriteLine($"{InstanceName}={Value.ToString()}");

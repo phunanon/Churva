@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Lil Hiccup\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Lil Hiccup\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Churva.Interpreter.Cli.15518226.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Lil Hiccup\Documents\Coding Projects\Churva\Churva\src\Churva.Interpreter.Cli" t="IncludeFlat">
+    <e p="C:\Users\dylan\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\dylan\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Churva.Interpreter.Cli.-762530054.00" t="ExcludeRecursive" />
+    <e p="C:\Users\dylan\Churva\src\Churva.Interpreter.Cli" t="IncludeFlat">
       <e p="Churva.Interpreter.BluePrints" t="IncludeRecursive">
         <e p="AssemblyExtensions.cs" t="Include" />
         <e p="Attributes" t="Include">

@@ -11,7 +11,7 @@ namespace Churva.Interpreter.BluePrints
     {
         public static Dictionary<String[], Type> Keywords { get; set; } = new Dictionary<String[], Type>();
 
-        public static readonly Dictionary<string,SingleOperator> SingleOperators = new Dictionary<String, SingleOperator>
+        public static readonly Dictionary<String,SingleOperator> SingleOperators = new Dictionary<String, SingleOperator>
         {
             {"!", SingleOperator.LogicalNegate},
             {"~",  SingleOperator.BitwiseNegate},
@@ -23,9 +23,10 @@ namespace Churva.Interpreter.BluePrints
             {"&", SingleOperator.VariableAddress},
             {"[", SingleOperator.ArrayAccess}
         };
-        public static readonly Dictionary<string, MultiOperator> MultiOperators = new Dictionary<string, MultiOperator>
+        
+        public static readonly Dictionary<String, MultiOperator> MultiOperators = new Dictionary<String, MultiOperator>
         {
-            //{"=", MultiOperator.VariableAssignment},
+            {"=", MultiOperator.VariableAssignment},
             {"+", MultiOperator.ArithmeticalAddition},
             {"-", MultiOperator.ArithmeticalSubtraction},
             {"*", MultiOperator.ArithmeticalMultiplication},
@@ -89,29 +90,37 @@ namespace Churva.Interpreter.BluePrints
             return false;
         }
 
-        public static String[] ParseValueInstance(IValueType ivt, IEnumerable<String> strings)
+        private static string GetFirstKeyword(IValueType valueType)
         {
-            var stringsList = strings.ToList();
-            if (!stringsList.Any())
-                throw new RuntimeException("Error: Internal failure.");
-            var returns = new String[2];
-            var str = stringsList.FirstOrDefault();
-            var words = ivt.GetType().GetAttributeValue((KeywordAttribute itm) => itm.Words);
-            var word = words.FirstOrDefault();
-            var reg = str.IndexOf(word, StringComparison.InvariantCulture);
-            str = str.Remove(reg, word.Length);
-            if(String.IsNullOrWhiteSpace(str))
+            var usedKeywords = valueType.GetType().GetAttributeValue((KeywordAttribute itm) => itm.Words);
+            var firstKeyword = usedKeywords.FirstOrDefault();
+            return firstKeyword;
+        }
+
+        public static String[] ValidateValueInstance(IValueType valueType, IEnumerable<String> instructions)
+        {
+            var firstInstruction = GetFirstInstruction(instructions);
+            var firstKeyword = GetFirstKeyword(valueType);
+            var reg = firstInstruction.IndexOf(firstKeyword, StringComparison.InvariantCulture);
+            firstInstruction = firstInstruction.Remove(reg, firstKeyword.Length);
+            if(String.IsNullOrWhiteSpace(firstInstruction))
                 throw new RuntimeException("ERROR: Expected an instance name");
-            if (str.Contains('='))
+            return ExtractVariableInstruction(firstInstruction, firstKeyword);
+        }
+
+        private static String[] ExtractVariableInstruction(String firstInstruction, String firstKeyword)
+        {
+            var returns = new String[2];
+            if (firstInstruction.Contains('='))
             {
                 try
                 {
-                    var split = str.Split('=', 2);
+                    var split = firstInstruction.Split('=', 2);
                     var inst = split[0].Trim();
                     CheckValidName(inst, returns);
                     var val = split[1].Trim();
-                    val = CheckValForOtherInst(val, word);
-                    
+                    val = ValidateAndAssignFromInstance(val, firstKeyword);
+
                     if (String.IsNullOrWhiteSpace(val))
                         throw new RuntimeException("ERROR: Expected Value");
                     returns[1] = val;
@@ -127,24 +136,32 @@ namespace Churva.Interpreter.BluePrints
             }
             else
             {
-                var instanceName = str.Trim();
+                var instanceName = firstInstruction.Trim();
                 if (!instanceName.ValidNewInstanceName())
                     throw new RuntimeException($"ERROR: {instanceName} is an invalid instance name");
                 returns[0] = instanceName;
             }
+
             return returns;
         }
 
-        private static String CheckValForOtherInst(String val, String word)
+        private static String GetFirstInstruction(IEnumerable<String> instructions)
         {
-            //if (!val.Contains('=')) return val;
-            
+            var iteratedInstructions = instructions.ToList();
+            if (!iteratedInstructions.Any())
+                throw new RuntimeException("Error: Internal failure.");
+            var str = iteratedInstructions.FirstOrDefault();
+            return str;
+        }
+
+        private static String ValidateAndAssignFromInstance(String val, String word)
+        {
             var inner = val.Split('=', 2);
             var innerInst = inner[0].Trim();
             
             if (Instances.Any(itm => itm.InstanceName == innerInst))
             {
-                val = GetOtherInstance(innerInst);
+                val = GetInstanceValue(innerInst);
             }
             else if (innerInst.StartsWith(word))
             {
@@ -174,10 +191,10 @@ namespace Churva.Interpreter.BluePrints
             return val;
         }
 
-        private static String GetOtherInstance(String innerInst)
+        private static String GetInstanceValue(String instance)
         {
             String val = null;
-            var @ref = Instances.FirstOrDefault(itm => itm.InstanceName == innerInst);
+            var @ref = Instances.FirstOrDefault(itm => itm.InstanceName == instance);
             if (@ref is IValueType refType)
             {
                 val = refType.Value.ToString();

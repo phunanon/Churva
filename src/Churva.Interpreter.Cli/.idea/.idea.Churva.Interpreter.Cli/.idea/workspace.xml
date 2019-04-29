@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fb86b6d-8cf6-4bfa-a596-fee96548a39e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Churva.Interpreter.Cli/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Churva.Interpreter.BluePrints.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Churva.Interpreter.BluePrints.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Churva.Interpreter.BluePrints.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Churva.Interpreter.BluePrints.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Debug/netcoreapp3.0/Churva.Interpreter.BluePrints.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/Debug/netcoreapp3.0/Churva.Interpreter.BluePrints.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Churva.Interpreter.Cli.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Churva.Interpreter.Cli.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Churva.Interpreter.Cli.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Churva.Interpreter.Cli.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/Debug/netcoreapp3.0/Churva.Interpreter.Cli.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Cli/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Churva.Interpreter.Core.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Churva.Interpreter.Core.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Churva.Interpreter.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Churva.Interpreter.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Debug/netcoreapp3.0/Churva.Interpreter.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/Debug/netcoreapp3.0/Churva.Interpreter.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Churva.Interpreter.Core/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,65 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Str.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-              <folding>
-                <marker date="1551324236094" expanded="false" signature="6:146" ph="..." />
-                <marker date="1551324236094" expanded="true" signature="186:755" ph="{...}" />
-                <marker date="1551324236094" expanded="true" signature="265:753" ph="{...}" />
-                <marker date="1551324236094" expanded="true" signature="332:695" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I08.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-              <folding>
-                <marker date="1551322037298" expanded="false" signature="6:165" ph="..." />
-                <marker date="1551322037298" expanded="true" signature="207:1230" ph="{...}" />
-                <marker date="1551322037298" expanded="true" signature="286:1228" ph="{...}" />
-                <marker date="1551322037298" expanded="true" signature="353:715" ph="{...}" />
-                <marker date="1551322037298" expanded="true" signature="557:652" ph="{...}" />
-                <marker date="1551322037298" expanded="true" signature="756:907" ph="/// Gets or sets the value of an 8 bit number; ... " />
-                <marker date="1551322037298" expanded="true" signature="943:1222" ph="{...}" />
-                <marker date="1551322037298" expanded="true" signature="996:1212" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <marker date="1551392356141" expanded="false" signature="6:146" ph="..." />
-                <marker date="1551392356141" expanded="true" signature="188:818" ph="{...}" />
-                <marker date="1551392356141" expanded="true" signature="284:816" ph="{...}" />
-                <marker date="1551392356141" expanded="true" signature="384:689" ph="{...}" />
-                <marker date="1551392356141" expanded="true" signature="728:810" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../TODO.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="414">
-                <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -81,56 +44,98 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-773">
-              <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+            <state relative-caret-position="-11">
+              <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
               <folding>
-                <marker date="1551324834814" expanded="false" signature="6:200" ph="..." />
-                <marker date="1551324834814" expanded="true" signature="241:7308" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="285:7306" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="531:987" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="1117:2021" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="2178:2993" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="2718:2957" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="2773:2943" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="3048:3135" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="3220:3559" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="3278:3497" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="3655:5453" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="4341:5120" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="4375:4859" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="4900:4963" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="4997:5106" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="5137:5415" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="5530:6697" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="5773:5852" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="5901:6662" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="6006:6263" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="6081:6177" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="6296:6421" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="6763:7046" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="6935:7011" ph="{...}" />
-                <marker date="1551324834814" expanded="true" signature="7124:7300" ph="{...}" />
+                <marker date="1556413250365" expanded="false" signature="6:200" ph="..." />
+                <marker date="1556413250365" expanded="true" signature="241:8023" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="285:8021" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="531:987" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="1126:2028" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="2185:3000" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="2725:2964" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="2780:2950" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="3055:3142" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="3227:3566" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="3285:3504" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="3635:3857" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="3967:4514" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="4620:5855" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="4719:5508" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="4753:5247" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="5288:5351" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="5385:5494" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="5525:5816" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="5940:6224" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="6310:7414" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="6490:6569" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="6618:7379" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="6723:6980" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="6798:6894" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="7013:7138" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="7479:7761" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="7650:7726" ph="{...}" />
+                <marker date="1556413250365" expanded="true" signature="7839:8015" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Attributes/KeywordAttribute.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding>
+                <marker date="1555628963670" expanded="true" signature="65:280" ph="{...}" />
+                <marker date="1555628963670" expanded="true" signature="112:278" ph="{...}" />
+                <marker date="1555628963670" expanded="true" signature="127:228" ph="/// Gets or sets the keyword used by the managing class. ... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+              <folding>
+                <marker date="1556403629572" expanded="false" signature="6:303" ph="..." />
+                <marker date="1556403629572" expanded="true" signature="337:3384" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="344:418" ph="/// The main class of the application ... " />
+                <marker date="1556403629572" expanded="true" signature="445:3382" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="623:786" ph="/// The main entry point of the application ... " />
+                <marker date="1556403629572" expanded="true" signature="834:2931" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="1135:2921" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="1169:2615" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="1491:2168" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="2479:2597" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="2667:2773" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="2816:2907" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="2975:3376" ph="{...}" />
+                <marker date="1556403629572" expanded="true" signature="3091:3366" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ReflectionHelper.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="55">
               <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding>
-                <marker date="1551292622532" expanded="false" signature="6:105" ph="..." />
-                <marker date="1551292622532" expanded="true" signature="146:1976" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="189:1974" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="277:416" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="511:640" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="746:1010" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="1110:1276" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="1381:1520" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="1710:1968" ph="{...}" />
-                <marker date="1551292622532" expanded="true" signature="1858:1929" ph="{...}" />
+                <marker date="1555628963701" expanded="false" signature="6:105" ph="..." />
+                <marker date="1555628963701" expanded="true" signature="146:1976" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="189:1974" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="277:416" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="511:640" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="746:1010" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="1110:1276" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="1381:1520" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="1710:1968" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="1858:1929" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -139,13 +144,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/RuntimeException.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
+            <state relative-caret-position="60">
               <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding>
-                <marker date="1550992702495" expanded="false" signature="6:51" ph="..." />
-                <marker date="1550992702495" expanded="true" signature="92:237" ph="{...}" />
-                <marker date="1550992702495" expanded="true" signature="139:235" ph="{...}" />
-                <marker date="1550992702495" expanded="true" signature="209:229" ph="{...}" />
+                <marker date="1555628963701" expanded="false" signature="6:51" ph="..." />
+                <marker date="1555628963701" expanded="true" signature="92:237" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="139:235" ph="{...}" />
+                <marker date="1555628963701" expanded="true" signature="209:229" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -154,17 +159,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="180">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
               <folding>
-                <marker date="1551322021280" expanded="false" signature="6:133" ph="..." />
-                <marker date="1551322021280" expanded="true" signature="185:1194" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="241:1192" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="274:294" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="350:438" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="471:630" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="523:620" ph="{...}" />
-                <marker date="1551322021280" expanded="true" signature="855:1186" ph="{...}" />
+                <marker date="1556405133868" expanded="false" signature="6:133" ph="..." />
+                <marker date="1556405133868" expanded="true" signature="185:1197" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="241:1195" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="274:294" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="350:438" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="471:630" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="523:620" ph="{...}" />
+                <marker date="1556405133868" expanded="true" signature="855:1189" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I32.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding>
+                <marker date="1555628963826" expanded="false" signature="6:165" ph="..." />
+                <marker date="1555628963826" expanded="true" signature="207:814" ph="{...}" />
+                <marker date="1555628963826" expanded="true" signature="286:812" ph="{...}" />
+                <marker date="1555628963826" expanded="true" signature="353:656" ph="{...}" />
+                <marker date="1555628963826" expanded="true" signature="724:806" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -173,14 +194,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F64.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="75">
               <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
               <folding>
-                <marker date="1551323235664" expanded="false" signature="6:146" ph="..." />
-                <marker date="1551323235664" expanded="true" signature="188:799" ph="{...}" />
-                <marker date="1551323235664" expanded="true" signature="268:797" ph="{...}" />
-                <marker date="1551323235664" expanded="true" signature="335:639" ph="{...}" />
-                <marker date="1551323235664" expanded="true" signature="709:791" ph="{...}" />
+                <marker date="1555628963810" expanded="false" signature="6:146" ph="..." />
+                <marker date="1555628963810" expanded="true" signature="188:799" ph="{...}" />
+                <marker date="1555628963810" expanded="true" signature="268:797" ph="{...}" />
+                <marker date="1555628963810" expanded="true" signature="335:639" ph="{...}" />
+                <marker date="1555628963810" expanded="true" signature="709:791" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -189,14 +210,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="60">
               <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
-                <marker date="1551324498724" expanded="false" signature="6:146" ph="..." />
-                <marker date="1551324498724" expanded="true" signature="188:804" ph="{...}" />
-                <marker date="1551324498724" expanded="true" signature="270:802" ph="{...}" />
-                <marker date="1551324498724" expanded="true" signature="370:675" ph="{...}" />
-                <marker date="1551324498724" expanded="true" signature="714:796" ph="{...}" />
+                <marker date="1555628963795" expanded="false" signature="6:146" ph="..." />
+                <marker date="1555628963795" expanded="true" signature="188:804" ph="{...}" />
+                <marker date="1555628963795" expanded="true" signature="270:802" ph="{...}" />
+                <marker date="1555628963795" expanded="true" signature="370:675" ph="{...}" />
+                <marker date="1555628963795" expanded="true" signature="714:796" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -213,47 +234,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Str.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/SingleOperator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F64.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F32.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Var.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/03/1e4bb8cd/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Null.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/IKeyword.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Attributes/KeywordAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/AssemblyExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/ce/fcf81318/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ReflectionHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/MultiOperator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U64.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U32.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U16.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/0e/6dd10d4f/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U08.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I64.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/09/d8d5c5fe/Number.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I32.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I16.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I08.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/c3/87842bde/Type.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/52/8f2507f6/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/IFlowControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/d4/43ce1d30/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/FlowControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/If.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/While.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Var.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/RuntimeException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Str.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/If.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/Ternary.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/IValueType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/While.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/Each.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/for.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/Sub.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Flow/Each.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Null.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/SingleOperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F64.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/RuntimeException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/AssemblyExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I64.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I08.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ReflectionHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I16.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/MultiOperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U16.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U64.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/U/U08.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Attributes/KeywordAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/IKeyword.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/IValueType.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -303,18 +317,18 @@
         <option value="$PROJECT_DIR$/Churva.Interpreter.Core/Type/Str.cs" />
         <option value="$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs" />
         <option value="$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs" />
-        <option value="$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" />
-        <option value="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" />
         <option value="$PROJECT_DIR$/Churva.Interpreter.Core/Type/Null.cs" />
         <option value="$PROJECT_DIR$/../../TODO.md" />
         <option value="$PROJECT_DIR$/Churva.Interpreter.Core/Type/F128.cs" />
         <option value="$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs" />
+        <option value="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" />
+        <option value="$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="793" />
-    <option name="width" value="814" />
+    <option name="x" value="792" />
+    <option name="width" value="816" />
     <option name="height" value="867" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -323,6 +337,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -339,27 +354,24 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Churva.Interpreter.Cli" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Churva.Interpreter.Cli" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Churva.Interpreter.Cli" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Churva.Interpreter.Core" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="Churva.Interpreter.Cli" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Churva.Interpreter.Core" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Type" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Churva.Interpreter.Cli" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Churva.Interpreter.Core" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Type" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="F" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Dependencies" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,7 +381,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -425,11 +437,14 @@
       <workItem from="1551022022356" duration="3885000" />
       <workItem from="1551290785894" duration="30982000" />
       <workItem from="1551326065095" duration="4019000" />
+      <workItem from="1555631349247" duration="824000" />
+      <workItem from="1556389489505" duration="5582000" />
+      <workItem from="1556410996940" duration="2740000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75552000" />
+    <option name="totallyTimeSpent" value="84698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,10 +456,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="775" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23521851" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24696356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -452,7 +467,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30404463" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.34449095" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3934681" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -462,9 +477,9 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Unit Tests" order="12" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.32914925" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3281493" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.50064266" side_tool="true" weight="0.32775453" />
-      <window_info anchor="bottom" id="Build" order="15" sideWeight="0.4993573" weight="0.35983264" />
+      <window_info anchor="bottom" id="Build" order="15" sideWeight="0.4993573" weight="0.3592535" />
       <window_info anchor="bottom" id="Change Signature" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -558,52 +573,54 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs</url>
-          <line>107</line>
-          <properties documentPath="$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs" initialLine="105">
+          <url>file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs</url>
+          <line>57</line>
+          <properties documentPath="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" initialLine="56">
             <startOffsets>
-              <option value="4392" />
+              <option value="2190" />
             </startOffsets>
             <endOffsets>
-              <option value="4393" />
+              <option value="2202" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs</url>
+          <line>33</line>
+          <properties documentPath="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" initialLine="33">
+            <startOffsets>
+              <option value="1114" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1135" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs" initialLine="47">
+            <startOffsets>
+              <option value="1676" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1691" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Churva.Interpreter.Core.csproj" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/ce/fcf81318/Assembly.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="221" column="6" selection-start-line="221" selection-start-column="6" selection-end-line="221" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/ce/fcf81318/Assembly.cs" />
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Class1.cs" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/d4/43ce1d30/ValueType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/c3/87842bde/Type.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="1159" column="5" lean-forward="true" selection-start-line="1159" selection-start-column="5" selection-end-line="1159" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/52/8f2507f6/ThrowHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2323">
-          <caret line="104" column="6" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/d4/43ce1d30/ValueType.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/c3/87842bde/Type.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/52/8f2507f6/ThrowHelper.cs" />
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Churva.Interpreter.BluePrints.csproj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -718,39 +735,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/03/1e4bb8cd/Int32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="125" column="39" lean-forward="true" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/09/d8d5c5fe/Number.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="2521" column="25" lean-forward="true" selection-start-line="2521" selection-start-column="25" selection-end-line="2521" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/0e/6dd10d4f/RuntimeMethodInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="428" column="6" selection-start-line="428" selection-start-column="6" selection-end-line="428" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Attributes/KeywordAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
-          <folding>
-            <marker date="1551010587750" expanded="true" signature="65:280" ph="{...}" />
-            <marker date="1551010587750" expanded="true" signature="112:278" ph="{...}" />
-            <marker date="1551010587750" expanded="true" signature="127:228" ph="/// Gets or sets the keyword used by the managing class. ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/03/1e4bb8cd/Int32.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/09/d8d5c5fe/Number.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3ECB725-DC86-4675-AD3F-B416C36A4BC6/0e/6dd10d4f/RuntimeMethodInfo.cs" />
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/AssemblyExtensions.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -794,20 +781,6 @@
           <folding>
             <marker date="1551313915070" expanded="true" signature="39:330" ph="{...}" />
             <marker date="1551313915070" expanded="true" signature="72:328" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <marker date="1551322416032" expanded="true" signature="6:165" ph="..." />
-            <marker date="1551322416032" expanded="true" signature="207:814" ph="{...}" />
-            <marker date="1551322416032" expanded="true" signature="286:812" ph="{...}" />
-            <marker date="1551322416032" expanded="true" signature="353:656" ph="{...}" />
-            <marker date="1551322416032" expanded="true" signature="724:806" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -909,30 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <marker date="1551325288784" expanded="false" signature="6:303" ph="..." />
-            <marker date="1551325288784" expanded="true" signature="337:3438" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="344:418" ph="/// The main class of the application ... " />
-            <marker date="1551325288784" expanded="true" signature="445:3436" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="623:786" ph="/// The main entry point of the application ... " />
-            <marker date="1551325288784" expanded="true" signature="834:2985" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="1135:2975" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="1169:2669" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="1447:2124" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="2250:2494" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="2533:2651" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="2721:2827" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="2870:2961" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="3029:3430" ph="{...}" />
-            <marker date="1551325288784" expanded="true" signature="3145:3420" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Null.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -950,188 +899,219 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-          <folding>
-            <marker date="1551323786843" expanded="false" signature="6:146" ph="..." />
-            <marker date="1551323786843" expanded="true" signature="186:1064" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="276:1062" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="393:463" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="588:1056" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="641:1046" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="715:845" ph="{...}" />
-            <marker date="1551323786843" expanded="true" signature="881:999" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding>
-            <marker date="1551322021280" expanded="false" signature="6:133" ph="..." />
-            <marker date="1551322021280" expanded="true" signature="185:1194" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="241:1192" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="274:294" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="350:438" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="471:630" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="523:620" ph="{...}" />
-            <marker date="1551322021280" expanded="true" signature="855:1186" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F64.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding>
-            <marker date="1551323235664" expanded="false" signature="6:146" ph="..." />
-            <marker date="1551323235664" expanded="true" signature="188:799" ph="{...}" />
-            <marker date="1551323235664" expanded="true" signature="268:797" ph="{...}" />
-            <marker date="1551323235664" expanded="true" signature="335:639" ph="{...}" />
-            <marker date="1551323235664" expanded="true" signature="709:791" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../TODO.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="414">
-            <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Str.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="75">
           <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
           <folding>
-            <marker date="1551324236094" expanded="false" signature="6:146" ph="..." />
-            <marker date="1551324236094" expanded="true" signature="186:755" ph="{...}" />
-            <marker date="1551324236094" expanded="true" signature="265:753" ph="{...}" />
-            <marker date="1551324236094" expanded="true" signature="332:695" ph="{...}" />
+            <marker date="1555628963826" expanded="false" signature="6:146" ph="..." />
+            <marker date="1555628963826" expanded="true" signature="265:753" ph="{...}" />
+            <marker date="1555628963826" expanded="true" signature="332:695" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I08.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="195">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
-            <marker date="1551322037298" expanded="false" signature="6:165" ph="..." />
-            <marker date="1551322037298" expanded="true" signature="207:1230" ph="{...}" />
-            <marker date="1551322037298" expanded="true" signature="286:1228" ph="{...}" />
-            <marker date="1551322037298" expanded="true" signature="353:715" ph="{...}" />
-            <marker date="1551322037298" expanded="true" signature="557:652" ph="{...}" />
-            <marker date="1551322037298" expanded="true" signature="756:907" ph="/// Gets or sets the value of an 8 bit number; ... " />
-            <marker date="1551322037298" expanded="true" signature="943:1222" ph="{...}" />
-            <marker date="1551322037298" expanded="true" signature="996:1212" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <marker date="1551324498724" expanded="false" signature="6:146" ph="..." />
-            <marker date="1551324498724" expanded="true" signature="188:804" ph="{...}" />
-            <marker date="1551324498724" expanded="true" signature="270:802" ph="{...}" />
-            <marker date="1551324498724" expanded="true" signature="370:675" ph="{...}" />
-            <marker date="1551324498724" expanded="true" signature="714:796" ph="{...}" />
+            <marker date="1555628963810" expanded="false" signature="6:165" ph="..." />
+            <marker date="1555628963810" expanded="true" signature="207:1230" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="286:1228" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="353:715" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="557:652" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="756:907" ph="/// Gets or sets the value of an 8 bit number; ... " />
+            <marker date="1555628963810" expanded="true" signature="943:1222" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="996:1212" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/Boo.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
+        <state relative-caret-position="180">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
-            <marker date="1551392356141" expanded="false" signature="6:146" ph="..." />
-            <marker date="1551392356141" expanded="true" signature="188:818" ph="{...}" />
-            <marker date="1551392356141" expanded="true" signature="284:816" ph="{...}" />
-            <marker date="1551392356141" expanded="true" signature="384:689" ph="{...}" />
-            <marker date="1551392356141" expanded="true" signature="728:810" ph="{...}" />
+            <marker date="1555628963795" expanded="false" signature="6:146" ph="..." />
+            <marker date="1555628963795" expanded="true" signature="188:818" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="284:816" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="384:689" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="728:810" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs">
+    <entry file="file://$PROJECT_DIR$/../../TODO.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-773">
-          <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Attributes/KeywordAttribute.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <marker date="1551324834814" expanded="false" signature="6:200" ph="..." />
-            <marker date="1551324834814" expanded="true" signature="241:7308" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="285:7306" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="531:987" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="1117:2021" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="2178:2993" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="2718:2957" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="2773:2943" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="3048:3135" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="3220:3559" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="3278:3497" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="3655:5453" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="4341:5120" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="4375:4859" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="4900:4963" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="4997:5106" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="5137:5415" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="5530:6697" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="5773:5852" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="5901:6662" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="6006:6263" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="6081:6177" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="6296:6421" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="6763:7046" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="6935:7011" ph="{...}" />
-            <marker date="1551324834814" expanded="true" signature="7124:7300" ph="{...}" />
+            <marker date="1555628963670" expanded="true" signature="65:280" ph="{...}" />
+            <marker date="1555628963670" expanded="true" signature="112:278" ph="{...}" />
+            <marker date="1555628963670" expanded="true" signature="127:228" ph="/// Gets or sets the keyword used by the managing class. ... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/RuntimeException.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="60">
           <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding>
-            <marker date="1550992702495" expanded="false" signature="6:51" ph="..." />
-            <marker date="1550992702495" expanded="true" signature="92:237" ph="{...}" />
-            <marker date="1550992702495" expanded="true" signature="139:235" ph="{...}" />
-            <marker date="1550992702495" expanded="true" signature="209:229" ph="{...}" />
+            <marker date="1555628963701" expanded="false" signature="6:51" ph="..." />
+            <marker date="1555628963701" expanded="true" signature="92:237" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="139:235" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="209:229" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F64.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <marker date="1555628963810" expanded="false" signature="6:146" ph="..." />
+            <marker date="1555628963810" expanded="true" signature="188:799" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="268:797" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="335:639" ph="{...}" />
+            <marker date="1555628963810" expanded="true" signature="709:791" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/F/F128.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <marker date="1555628963795" expanded="false" signature="6:146" ph="..." />
+            <marker date="1555628963795" expanded="true" signature="188:804" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="270:802" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="370:675" ph="{...}" />
+            <marker date="1555628963795" expanded="true" signature="714:796" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ChurvaEnvironment.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+          <folding>
+            <marker date="1556413250365" expanded="false" signature="6:200" ph="..." />
+            <marker date="1556413250365" expanded="true" signature="241:8023" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="285:8021" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="531:987" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="1126:2028" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="2185:3000" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="2725:2964" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="2780:2950" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="3055:3142" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="3227:3566" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="3285:3504" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="3635:3857" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="3967:4514" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="4620:5855" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="4719:5508" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="4753:5247" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="5288:5351" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="5385:5494" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="5525:5816" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="5940:6224" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="6310:7414" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="6490:6569" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="6618:7379" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="6723:6980" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="6798:6894" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="7013:7138" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="7479:7761" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="7650:7726" ph="{...}" />
+            <marker date="1556413250365" expanded="true" signature="7839:8015" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Core/Type/I/I32.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding>
+            <marker date="1555628963826" expanded="false" signature="6:165" ph="..." />
+            <marker date="1555628963826" expanded="true" signature="207:814" ph="{...}" />
+            <marker date="1555628963826" expanded="true" signature="286:812" ph="{...}" />
+            <marker date="1555628963826" expanded="true" signature="353:656" ph="{...}" />
+            <marker date="1555628963826" expanded="true" signature="724:806" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/Interfaces/ValueType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding>
+            <marker date="1556405133868" expanded="false" signature="6:133" ph="..." />
+            <marker date="1556405133868" expanded="true" signature="185:1197" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="241:1195" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="274:294" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="350:438" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="471:630" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="523:620" ph="{...}" />
+            <marker date="1556405133868" expanded="true" signature="855:1189" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Churva.Interpreter.BluePrints/ReflectionHelper.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="55">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
-            <marker date="1551292622532" expanded="false" signature="6:105" ph="..." />
-            <marker date="1551292622532" expanded="true" signature="146:1976" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="189:1974" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="277:416" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="511:640" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="746:1010" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="1110:1276" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="1381:1520" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="1710:1968" ph="{...}" />
-            <marker date="1551292622532" expanded="true" signature="1858:1929" ph="{...}" />
+            <marker date="1555628963701" expanded="false" signature="6:105" ph="..." />
+            <marker date="1555628963701" expanded="true" signature="146:1976" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="189:1974" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="277:416" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="511:640" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="746:1010" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="1110:1276" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="1381:1520" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="1710:1968" ph="{...}" />
+            <marker date="1555628963701" expanded="true" signature="1858:1929" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Churva.Interpreter.Cli/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <marker date="1556403629572" expanded="false" signature="6:303" ph="..." />
+            <marker date="1556403629572" expanded="true" signature="337:3384" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="344:418" ph="/// The main class of the application ... " />
+            <marker date="1556403629572" expanded="true" signature="445:3382" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="623:786" ph="/// The main entry point of the application ... " />
+            <marker date="1556403629572" expanded="true" signature="834:2931" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="1135:2921" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="1169:2615" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="1491:2168" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="2479:2597" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="2667:2773" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="2816:2907" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="2975:3376" ph="{...}" />
+            <marker date="1556403629572" expanded="true" signature="3091:3366" ph="{...}" />
           </folding>
         </state>
       </provider>
